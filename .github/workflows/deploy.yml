@@ -1,4 +1,4 @@
-# Off-host build: GitHub's free ARM runners build the image, ghcr.io
+# Off-host build: a GitHub runner builds the image, ghcr.io
 # stores it, Coolify on the VPS only pulls. The server never compiles
 # again. Releases are tagged by hand, this workflow only follows main.
 name: deploy
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
@@ -28,7 +28,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          platforms: linux/arm64
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/kerkenes/templ-ui:latest
@@ -36,7 +36,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Coolify pulls the fresh image; the URL is the resource's deploy
-      # webhook stored as a repo secret.
+      # Coolify pulls the fresh image. The URL is the resource's deploy
+      # webhook and the token an API token with the deploy permission:
+      # the endpoint changes state, so it takes POST and refuses an
+      # unauthenticated call with a 401.
       - name: Trigger Coolify deploy
-        run: curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}"
+        run: curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
