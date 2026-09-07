@@ -9,8 +9,7 @@ import (
 )
 
 type Config struct {
-	GoEnv       string
-	GitHubToken string
+	GoEnv string
 }
 
 var AppConfig *Config
@@ -24,7 +23,6 @@ func LoadConfig() {
 	}
 
 	AppConfig = &Config{
-		GoEnv:       os.Getenv("GO_ENV"),
-		GitHubToken: os.Getenv("GITHUB_TOKEN"),
+		GoEnv: os.Getenv("GO_ENV"),
 	}
 }
