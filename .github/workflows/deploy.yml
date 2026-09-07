@@ -41,4 +41,5 @@ jobs:
       # the endpoint changes state, so it takes POST and refuses an
       # unauthenticated call with a 401.
       - name: Trigger Coolify deploy
-        run: curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+        run: |
+          curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
