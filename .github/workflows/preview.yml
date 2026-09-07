@@ -16,6 +16,7 @@ on:
 permissions:
   contents: read
   packages: write
+  pull-requests: write
 
 # A push to a labelled PR supersedes the build already running for it.
 concurrency:
@@ -54,8 +55,14 @@ jobs:
           curl -fsS -X POST "${{ secrets.COOLIFY_URL }}/api/v1/deploy?uuid=${{ secrets.COOLIFY_APP_UUID }}&pull_request_id=${{ github.event.pull_request.number }}&docker_tag=pr-${{ github.event.pull_request.number }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
 
       - name: Say where it went
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: https://${{ github.event.pull_request.number }}.templ-ui.muratkirazkaya.com
         run: |
-          echo "Preview: https://${{ github.event.pull_request.number }}.templ-ui.muratkirazkaya.com" >> $GITHUB_STEP_SUMMARY
+          echo "Preview: $URL" >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --edit-last --create-if-none \
+            --body "🔗 Preview: $URL"
 
   # The preview outlives neither the pull request nor the label.
   teardown:
