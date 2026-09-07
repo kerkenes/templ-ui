@@ -2,10 +2,11 @@ package showcase
 
 import "github.com/kerkenes/templ-ui/components/segmentedprocess"
 
-templ SegmentedProcessDefault() {
+templ SegmentedProcessHeight() {
 	<div class="w-full max-w-md">
 		@segmentedprocess.SegmentedProcess(segmentedprocess.Props{
-			Max: 100,
+			Max:    100,
+			Height: 24,
 			Segments: []segmentedprocess.Segment{
 				{Label: "Segment A", Value: 45},
 				{Label: "Segment B", Value: 30},

@@ -1,0 +1,20 @@
+package showcase
+
+import "github.com/kerkenes/templ-ui/components/segmentedprocess"
+
+templ SegmentedProcessThresholds() {
+	<div class="w-full max-w-md">
+		@segmentedprocess.SegmentedProcess(segmentedprocess.Props{
+			Max:  100,
+			Unit: "GB",
+			Segments: []segmentedprocess.Segment{
+				{Label: "Builds", Value: 32},
+				{Label: "Logs", Value: 14},
+				{Label: "Backups", Value: 8},
+			},
+			Thresholds: []segmentedprocess.Threshold{
+				{Value: 70, Label: "70 GB", Variant: segmentedprocess.ThresholdVariantWarning},
+			},
+		})
+	</div>
+}
