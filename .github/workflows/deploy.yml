@@ -1,7 +1,6 @@
 # Off-host build: GitHub's free ARM runners build the image, ghcr.io
-# stores it, Dokploy only pulls (Provider: Docker). The server never
-# compiles again. Tag-triggered releases extend this workflow later
-# (see CREATE_1TO1_PLAN.md, release plan).
+# stores it, Coolify on the VPS only pulls. The server never compiles
+# again. Releases are tagged by hand, this workflow only follows main.
 name: deploy
 
 on:
@@ -37,7 +36,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Dokploy pulls the fresh image; the URL is the app's deploy
-      # webhook (Deployments tab) stored as a repo secret.
-      - name: Trigger Dokploy deploy
-        run: curl -fsS -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
+      # Coolify pulls the fresh image; the URL is the resource's deploy
+      # webhook stored as a repo secret.
+      - name: Trigger Coolify deploy
+        run: curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}"

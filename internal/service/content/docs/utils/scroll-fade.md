@@ -5,12 +5,12 @@ description: "Utilities for adding a fade effect to the edges of a scroll contai
 
 ## Installation
 
-If your project was set up with `shadcn-templ init`, you already have `scroll-fade`. It ships in the vendored `shadcn-tailwind.css`, which the CLI imports in your Tailwind entry file.
+If your project was set up with `templ-ui init`, you already have `scroll-fade`. It ships in the vendored `shadcn-tailwind.css`, which the CLI imports in your Tailwind entry file.
 
 Otherwise, vendor the stylesheet next to your Tailwind entry file:
 
 ```shell
-curl -o assets/css/shadcn-tailwind.css https://shadcn-templ.com/assets/css/shadcn-tailwind.css
+curl -o assets/css/shadcn-tailwind.css https://templ-ui.muratkirazkaya.com/assets/css/shadcn-tailwind.css
 ```
 
 Then import the shared utilities in your Tailwind entry file:
@@ -127,6 +127,6 @@ Since the mask is applied to the scroll container itself, a visible scrollbar fa
 
 ## RTL
 
-To install RTL-compiled components, see the [`rtl` setting](/docs/components-json#rtl) in your `components.json`.
+The utility flips with the document direction on its own: set `dir="rtl"` on `<html>` (or on any ancestor) and the fade follows it. The shipped stylesheet carries both directions.
 
 `scroll-fade-x` follows the reading direction. At rest, the start edge is crisp and the end edge fades. In RTL layouts that means a crisp right edge and a fade on the left, mirrored from LTR.

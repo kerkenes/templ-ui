@@ -1,9 +1,9 @@
 ---
 title: "Package Imports"
-description: "Configure shadcn-templ with Go import paths."
+description: "Configure templ-ui with Go import paths."
 ---
 
-The `shadcn-templ` CLI uses Go import paths for installing components and rewriting imports.
+The `templ-ui` CLI uses Go import paths for installing components and rewriting imports.
 
 Go resolves imports through the `module` path in your `go.mod`, so there is no separate alias configuration like path mappings in other ecosystems. The CLI derives your import paths from `go.mod` and stores them as `aliases` in `components.json`.
 
@@ -31,13 +31,13 @@ import (
 
 <Callout className="mt-6">
 
-Alias paths are Go import paths and must live under the `module` path of your `go.mod`. `shadcn-templ init` derives them for you.
+Alias paths are Go import paths and must live under the `module` path of your `go.mod`. `templ-ui init` derives them for you.
 
 </Callout>
 
 ## Module Imports
 
-In the import workflow, components are imported directly from the shadcn-templ module. No `components.json` and no aliases are needed:
+In the import workflow, components are imported directly from the templ-ui module. No `components.json` and no aliases are needed:
 
 ```go
 import "github.com/kerkenes/templ-ui/components/button"
@@ -61,7 +61,7 @@ module your-app
 
 ### Configure `components.json`
 
-Run `shadcn-templ init` to write `components.json`. It derives the aliases from your `go.mod` module path.
+Run `templ-ui init` to write `components.json`. It derives the aliases from your `go.mod` module path.
 
 ```json title="components.json"
 {
@@ -77,7 +77,7 @@ The `components` alias is the import path components install under. The `utils` 
 ### Add components
 
 ```shell
-shadcn-templ add button
+templ-ui add button
 ```
 
 The CLI resolves registry dependencies recursively and rewrites all imports — `github.com/kerkenes/templ-ui/components/...` and `github.com/kerkenes/templ-ui/utils` — to your aliases.
@@ -92,4 +92,4 @@ If Go cannot resolve an import after adding components, check that:
 - you ran `templ generate` and `go mod tidy` after adding
 - the component directory exists under the path the `components` alias points to
 
-If a component is installed but its imports still point at the wrong module path, fix the `aliases` in `components.json` and re-run `shadcn-templ add <component> --overwrite`.
+If a component is installed but its imports still point at the wrong module path, fix the `aliases` in `components.json` and re-run `templ-ui add <component> --overwrite`.

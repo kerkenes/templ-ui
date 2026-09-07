@@ -2,7 +2,7 @@
 // (buildRegistryTheme, buildThemeForPreset, buildRegistryBase,
 // buildPartialRegistryBase).
 //
-// Field mapping where the npm original has no shadcn-templ pendant (the
+// Field mapping where the npm original has no templ-ui pendant (the
 // registryItemSchema field names are kept):
 //
 //	dependencies:            npm packages -> the Go module. shadcn@latest
@@ -19,7 +19,7 @@
 //	registryDependencies:    kept 1:1 ("utils", "font-<x>",
 //	                         "font-heading-<x>") — they name registry items,
 //	                         not packages.
-//	docs (rtl):              dropped; shadcn-templ has no per-template RTL setup
+//	docs (rtl):              dropped; templ-ui has no per-template RTL setup
 //	                         pages (shadcn links /docs/rtl/<template>).
 //	devDependencies (index): dropped; tw-animate-css and the shadcn CLI are
 //	                         npm-only concepts.
@@ -60,7 +60,7 @@ type Item struct {
 
 // ItemFile field order follows the live files[] entries (path, content,
 // type, target). target stays omitted for ui items like in the golden
-// output; block files may carry it and the shadcn-templ CLI prefers it over
+// output; block files may carry it and the templ-ui CLI prefers it over
 // the components dir mapping.
 type ItemFile struct {
 	Path    string `json:"path"`
@@ -83,7 +83,7 @@ type ItemMeta struct {
 }
 
 // ItemLinks keeps only docs; shadcn's examples/api links point at tsx
-// example sources and base-ui API docs that have no shadcn-templ pendant.
+// example sources and base-ui API docs that have no templ-ui pendant.
 type ItemLinks struct {
 	Docs string `json:"docs"`
 }

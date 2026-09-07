@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://shadcn-templ.com/schema/registry.json",
-  "title": "shadcn-templ registry.json",
-  "description": "A shadcn-templ registry of components, examples and libraries.",
+  "$id": "https://templ-ui.muratkirazkaya.com/schema/registry.json",
+  "title": "templ-ui registry.json",
+  "description": "A templ-ui registry of components, examples and libraries.",
   "type": "object",
   "properties": {
     "$schema": {
@@ -19,7 +19,7 @@
     "items": {
       "type": "array",
       "items": {
-        "$ref": "https://shadcn-templ.com/schema/registry-item.json"
+        "$ref": "https://templ-ui.muratkirazkaya.com/schema/registry-item.json"
       }
     }
   },

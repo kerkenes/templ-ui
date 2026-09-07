@@ -11,9 +11,8 @@ import (
 // (and their raw markdown under /docs/<slug>.md). cmd/docs registers the
 // routes from this list and cmd/sitemap generates the sitemap from it.
 var DocSlugs = []string{
-	"introduction", "installation", "components-json", "package-imports", "theming", "typeset", "dark-mode", "import-workflow",
+	"introduction", "installation", "package-imports", "theming", "typeset", "dark-mode",
 	"utils/scroll-fade", "utils/shimmer",
-	"registry", "registry/getting-started", "registry/registry-json", "registry/registry-item-json",
 }
 
 type SideLink struct {
@@ -24,7 +23,7 @@ type SideLink struct {
 }
 
 // NavItems is the pendant of siteConfig.navItems in shadcn's lib/config.ts,
-// reduced to the pages shadcn-templ has (no Directory).
+// reduced to the pages templ-ui has (no Directory).
 var NavItems = []SideLink{
 	{Text: "Home", Href: "/"},
 	{Text: "Docs", Href: "/docs/installation"},
@@ -38,7 +37,7 @@ var NavItems = []SideLink{
 // TopLevelSections is the 1:1 pendant of TOP_LEVEL_SECTIONS in shadcn's
 // docs-sidebar.tsx (mobile-nav.tsx duplicates it verbatim; one Go slice
 // serves both modules): same entries, same order, minus Skills, which has no
-// shadcn-templ page yet. Their Introduction href is the /docs index page; ours
+// templ-ui page yet. Their Introduction href is the /docs index page; ours
 // lives at /docs/introduction.
 var TopLevelSections = []SideLink{
 	{Text: "Introduction", Href: "/docs/introduction"},
@@ -46,13 +45,12 @@ var TopLevelSections = []SideLink{
 	{Text: "Installation", Href: "/docs/installation"},
 	{Text: "Theming", Href: "/docs/theming"},
 	{Text: "Typeset", Href: "/docs/typeset"},
-	{Text: "Registry", Href: "/docs/registry"},
 	{Text: "Changelog", Href: "/docs/changelog"},
 }
 
 // ExcludedSidebarSections is the EXCLUDED_SECTIONS pendant: doc tree folders
 // the sidebar does not render as groups. shadcn lists installation,
-// dark-mode, changelog and rtl there - all folders shadcn-templ does not have, so
+// dark-mode, changelog and rtl there - all folders templ-ui does not have, so
 // the map is empty until one of them grows a section.
 var ExcludedSidebarSections = map[string]bool{}
 
@@ -67,7 +65,7 @@ var ExcludedSidebarPages = map[string]bool{
 
 // PagesNew is the PAGES_NEW pendant of shadcn's lib/docs.ts: docs URLs that
 // render the blue "New" dot in the sidebar, the mobile nav and the components
-// list. Ours marks what shadcn-templ 2.0 adds over v1: components without a v1
+// list. Ours marks what templ-ui 2.0 adds over v1: components without a v1
 // predecessor (renames like dropdown -> dropdown-menu, radio -> radio-group,
 // selectbox -> select do not count, date picker became a pattern page) and
 // the new docs pages. Curated by hand like the reference: a PR that adds a
@@ -125,7 +123,7 @@ func loadComponentsFromRegistry() []SideLink {
 var Sections = []Section{
 	// Group order is the reference's root meta.json tree order: components
 	// first, then the (root) Get Started folder, then utils and registry
-	// (react, helpers and forms have no shadcn-templ pages yet).
+	// (react, helpers and forms have no templ-ui pages yet).
 	{
 		Title: "Components",
 		Links: loadComponentsFromRegistry(),
@@ -144,12 +142,6 @@ var Sections = []Section{
 			{
 				Text: "Installation",
 				Href: "/docs/installation",
-			},
-			// Order per shadcn's (root)/meta.json: components.json follows
-			// Installation, CLI follows the Dark Mode link.
-			{
-				Text: "components.json",
-				Href: "/docs/components-json",
 			},
 			{
 				Text: "Package Imports",
@@ -178,9 +170,7 @@ var Sections = []Section{
 			},
 		},
 	},
-	// Utilities before Registry, per shadcn's root meta.json section order
-	// (utils, registry); the page lists mirror utils/meta.json and the
-	// ported subset of registry/meta.json.
+	// The page list mirrors utils/meta.json.
 	{
 		Title: "Utilities",
 		Links: []SideLink{
@@ -191,38 +181,6 @@ var Sections = []Section{
 			{
 				Text: "shimmer",
 				Href: "/docs/utils/shimmer",
-			},
-		},
-	},
-	{
-		Title: "Registry",
-		Links: []SideLink{
-			{
-				Text: "Introduction",
-				Href: "/docs/registry",
-			},
-			{
-				Text: "Getting Started",
-				Href: "/docs/registry/getting-started",
-			},
-			{
-				Text: "registry.json",
-				Href: "/docs/registry/registry-json",
-			},
-			{
-				Text: "registry-item.json",
-				Href: "/docs/registry/registry-item-json",
-			},
-		},
-	},
-	// shadcn-templ extra, deliberately its own section at the bottom: the import
-	// workflow lives outside the shadcn-parity chapters.
-	{
-		Title: "Go Module",
-		Links: []SideLink{
-			{
-				Text: "Import Workflow",
-				Href: "/docs/import-workflow",
 			},
 		},
 	},

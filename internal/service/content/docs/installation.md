@@ -1,230 +1,105 @@
 ---
 title: "Installation"
-description: "How to install dependencies and structure your app."
+description: "How to add templ-ui to a templ project."
 order: 2
 ---
 
-<Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
+templ-ui is a Go module. Components are imported from it, not copied into your
+repository, and `go get -u` is what updates them.
 
-**Recommended for new projects:** Use [shadcn-templ/create](/create) to build your preset visually and generate the right setup command.
+## Prerequisites
 
-</Callout>
-
-Choose the setup that matches your starting point.
-
-<div class="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6" data-not-typeset>
-  <a href="#scaffold-with-create" class="flex w-full flex-col items-start gap-1 rounded-2xl bg-surface p-6 text-sm text-surface-foreground transition-colors hover:bg-surface/80 sm:p-10 md:p-6">
-    <div class="font-medium">Use shadcn-templ/create</div>
-    <div class="leading-relaxed text-muted-foreground">Build your preset and generate a templ project command.</div>
-  </a>
-  <a href="#scaffold-with-cli" class="flex w-full flex-col items-start gap-1 rounded-2xl bg-surface p-6 text-sm text-surface-foreground transition-colors hover:bg-surface/80 sm:p-10 md:p-6">
-    <div class="font-medium">Use the CLI</div>
-    <div class="leading-relaxed text-muted-foreground">Scaffold a new templ project directly from the terminal.</div>
-  </a>
-  <a href="#existing-project" class="flex w-full flex-col items-start gap-1 rounded-2xl bg-surface p-6 text-sm text-surface-foreground transition-colors hover:bg-surface/80 sm:p-10 md:p-6">
-    <div class="font-medium">Existing Project</div>
-    <div class="leading-relaxed text-muted-foreground">Configure shadcn-templ manually in an existing templ project.</div>
-  </a>
-</div>
-
-<div id="scaffold-with-create" class="scroll-mt-24"></div>
-
-## Use shadcn-templ/create
+A Go project with [templ](https://templ.guide) set up. Tailwind CSS is
+optional: the module ships a compiled stylesheet, and you only need your own
+Tailwind build if your app has utilities of its own.
 
 <Steps>
 
-### Build Your Preset
-
-Open [shadcn-templ/create](/create) and build your preset visually. Choose your style, colors, fonts, icons, and more.
-
-<a href="/create" target="_blank" rel="noopener noreferrer" data-not-typeset class="cn-button group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all outline-none select-none cn-button-variant-default cn-button-size-sm mt-6 no-underline!">Open shadcn-templ/create</a>
-
-### Create Project
-
-Click `Get Code`, choose your project tab, and copy the generated command. Install the CLI first if you do not have it yet:
+<Step>Add the module</Step>
 
 ```shell
-go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
+go get github.com/kerkenes/templ-ui@latest
 ```
 
-The generated command will look similar to this:
+<Step>Serve the stylesheet, the fonts and the component scripts</Step>
 
-```shell
-shadcn-templ init -t templ --preset [CODE]
+```go
+import (
+  "github.com/kerkenes/templ-ui/assets"
+  "github.com/kerkenes/templ-ui/components"
+)
+
+mux.Handle("GET /assets/", assets.Handler())
+mux.Handle("GET /components/{bundle}", components.ScriptsHandler())
 ```
 
-The exact command will include the preset code that encodes your selected options such as your style, base color and fonts.
+The `/assets/` prefix is not a preference: the stylesheet's `@font-face` rules
+address the fonts there.
 
-### Run the App
+<Step>Reference them once, in your layout</Step>
 
-The scaffolded project ships the `Taskfile.yml` dev setup. Run everything with:
-
-```shell
-cd templ-app
-go mod tidy
-task dev
+```templ
+<head>
+  <link rel="stylesheet" href={ assets.StylesheetURL() }/>
+  @components.Scripts()
+</head>
 ```
 
-### Add Components
+<Step>Pick a style</Step>
 
-Add the `Card` component to your project:
+Components carry `cn-*` classes; the style class on `<body>` decides how they
+render. The eight styles are `style-vega`, `style-nova`, `style-maia`,
+`style-lyra`, `style-mira`, `style-luma`, `style-sera` and `style-rhea`.
 
-```shell
-shadcn-templ add card
+```templ
+<body class="style-vega">
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+<Step>Import a component</Step>
 
-```templ title="pages/home.templ" showLineNumbers
-package pages
+```go
+import "github.com/kerkenes/templ-ui/components/button"
+```
 
-import "templ-app/components/card"
-
-templ Home() {
-	@card.Card(card.Props{Class: "max-w-sm"}) {
-		@card.Header() {
-			@card.Title() {
-				Project Overview
-			}
-			@card.Description() {
-				Track progress and recent activity for your app.
-			}
-		}
-		@card.Content() {
-			Your design system is ready. Start building your next component.
-		}
-	}
+```templ
+@button.Button() {
+  Click me
 }
 ```
 
-After adding components, run `templ generate` and `go mod tidy`.
-
 </Steps>
 
-<div id="scaffold-with-cli" class="scroll-mt-24"></div>
+## Running Tailwind yourself
 
-## Use the CLI
+`assets.StylesheetURL()` serves a stylesheet compiled from the components
+alone, which is everything the components need and nothing your own markup
+uses. If your app has its own utility classes, run Tailwind over both instead
+of shipping two stylesheets: point it at the module's `globals.css` and add
+the module's components as a scan source.
 
-<Steps>
-
-### Create Project
-
-Run the `init` command to scaffold a new templ project. Configure your project with flags: preset, base color, and more:
-
-```shell
-go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
-shadcn-templ init -t templ
-```
-
-Pick a design on [shadcn-templ/create](/create) and pass its preset code, or use one of the named presets (`nova`, `vega`, `maia`, `lyra`, `mira`, `luma`, `sera`, `rhea`):
-
-```shell
-shadcn-templ init -t templ --preset b2D0wqNxT
-shadcn-templ init -t templ --preset vega
-```
-
-### Run the App
-
-The scaffolded project ships the `Taskfile.yml` dev setup. Run everything with:
-
-```shell
-cd templ-app
-go mod tidy
-task dev
-```
-
-### Add Components
-
-Add the `Card` component to your project:
-
-```shell
-shadcn-templ add card
-```
-
-The command above will add the `Card` component to your project. You can then import it like this:
-
-```templ title="pages/home.templ" showLineNumbers
-package pages
-
-import "templ-app/components/card"
-
-templ Home() {
-	@card.Card(card.Props{Class: "max-w-sm"}) {
-		@card.Header() {
-			@card.Title() {
-				Project Overview
-			}
-			@card.Description() {
-				Track progress and recent activity for your app.
-			}
-		}
-		@card.Content() {
-			Your design system is ready. Start building your next component.
-		}
-	}
-}
-```
-
-After adding components, run `templ generate` and `go mod tidy`.
-
-</Steps>
-
-<div id="existing-project" class="scroll-mt-24"></div>
-
-## Existing Project
-
-<Steps>
-
-### Create Project
-
-If you need a new Go module, create one with `go mod init`. Otherwise, skip this step.
-
-```shell
-mkdir myapp && cd myapp
-go mod init myapp
-```
-
-### Configure templ, Tailwind CSS and Task
-
-If you're adding shadcn-templ to an existing templ app, make sure templ, Tailwind CSS and Task are installed first:
-
-```shell
-go install github.com/a-h/templ/cmd/templ@latest
-go install github.com/go-task/task/v3/cmd/task@latest
-```
-
-The Tailwind CSS v4.1+ standalone CLI is required: download it from the [GitHub Releases](https://github.com/tailwindlabs/tailwindcss/releases/latest) or use your package manager.
-
-Import aliases need no configuration: Go resolves imports through the `module` path in your `go.mod`. See [Package Imports](/docs/package-imports).
-
-### Run the CLI
-
-Run the `shadcn-templ` init command to set up shadcn-templ in your project:
-
-```shell
-go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
-shadcn-templ init
-```
-
-Init writes `components.json`, merges your theme CSS variables and base layer into your Tailwind entry file (detected, or created at `assets/css/globals.css`), vendors `tw-animate.css` and `shadcn-tailwind.css` next to it, and installs the shared `utils` package. See the [CLI docs](/docs/cli) for all flags, updating with `--overwrite` and applying presets.
-
-### Create Taskfile
-
-templ and Tailwind run as watchers; a `Taskfile.yml` in your project root wires them into one dev command:
+The module directory is wherever the Go module cache put it, so ask the
+toolchain rather than hardcoding a version path:
 
 ```yaml
 version: "3"
 
 tasks:
+  tailwind:
+    desc: Watch Tailwind CSS changes
+    cmds:
+      - |
+        TEMPL_UI_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/kerkenes/templ-ui)" && \
+        printf '%s\n' \
+          "@import \"$TEMPL_UI_PATH/assets/css/globals.css\";" \
+          '@source "./**/*.templ";' \
+          "@source \"$TEMPL_UI_PATH/components/**/*.templ\";" \
+          > ./assets/css/sources.generated.css && \
+        tailwindcss -i ./assets/css/globals.css -o ./assets/css/output.css --watch
+
   templ:
     desc: Run templ with integrated server and hot reload
     cmds:
       - templ generate --watch --proxy="http://localhost:8090" --cmd="go run ./main.go" --open-browser=false
-
-  tailwind:
-    desc: Watch Tailwind CSS changes
-    cmds:
-      - "tailwindcss -i ./assets/css/globals.css -o ./assets/css/output.css --watch"
 
   dev:
     desc: Start development server with hot reload
@@ -232,111 +107,33 @@ tasks:
       - task --parallel tailwind templ
 ```
 
-Run everything with:
+Your own `assets/css/globals.css` then imports the generated file, and your
+`<link>` points at your `output.css` rather than `assets.StylesheetURL()`. The
+fonts still come from `assets.Handler()`.
 
-```shell
-task dev
-```
-
-Adjust the `--proxy` port (default: 8090) if your app uses a different port. templ's dev server runs at http://localhost:7331
-
-### Add Components
-
-You can now start adding components to your project.
-
-```shell
-shadcn-templ add button
-```
-
-The command above will add the `Button` component to your project. You can then import it like this:
-
-```templ title="pages/home.templ" showLineNumbers
-package pages
-
-import "myapp/components/button"
-
-templ Home() {
-	<div class="flex min-h-svh items-center justify-center">
-		@button.Button() {
-			Click me
-		}
-	</div>
-}
-```
-
-After adding components, run `templ generate` and `go mod tidy`.
-
-</Steps>
+For custom themes and color palettes, see the [theming docs](/docs/theming).
 
 ## JavaScript
 
-shadcn-templ ships all component behavior as one script bundle. The setup is a one-time step in your app, no per-component script tags.
+Every component's behavior ships as one script bundle, mounted at
+`/components/{bundle}` above and loaded by `@components.Scripts()`. There are
+no per-component script tags.
 
-Render the script tag once in your layout `<head>`:
-
-```go
-import "your-app/components"
-```
-
-```templ
-<head>
-  @components.Scripts()
-</head>
-```
-
-Mount the route the script tag points at:
-
-```go
-mux.Handle("GET /components/{bundle}", components.ScriptsHandler())
-```
-
-The bundle is the concatenation of every `.js` file under your configured components directory. In production (`GO_ENV=production`) it is built once from the embedded files and served with immutable caching; in development it is rebuilt from that local directory on every request, so edits to copied component scripts hot-reload.
-
-## Serve Assets
-
-Use `setupAssetsRoutes(...)` to serve your app assets like Tailwind CSS output, fonts, images, and local files:
-
-```go
-func setupAssetsRoutes(mux *http.ServeMux) {
-  isDevelopment := os.Getenv("GO_ENV") != "production"
-
-  // Your app assets (CSS, fonts, images, ...)
-  assetHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    if isDevelopment {
-      w.Header().Set("Cache-Control", "no-store")
-    } else {
-      w.Header().Set("Cache-Control", "public, max-age=31536000")
-    }
-
-    var fs http.Handler
-    if isDevelopment {
-      fs = http.FileServer(http.Dir("./assets"))
-    } else {
-      fs = http.FileServer(http.FS(assets.Assets))
-    }
-
-    fs.ServeHTTP(w, r)
-  })
-
-  mux.Handle("GET /assets/", http.StripPrefix("/assets/", assetHandler))
-
-  // shadcn-templ component script bundle
-  mux.Handle("GET /components/{bundle}", components.ScriptsHandler())
-}
-```
-
-Your Go app must serve `/assets/...` so the browser can load `assets/css/output.css`, fonts, images, and local files. The `/components/{bundle}` route serves the hashed script bundle that `@components.Scripts()` loads.
-
-> **📝 Note:** shadcn-templ also works as a plain Go module dependency without copying any source. That is a shadcn-templ extra outside this page, see [Import Workflow](/docs/import-workflow).
+The bundle is built from the JavaScript embedded in the module and served with
+immutable caching under a content-hashed name. Running inside a checkout of
+this repository, where a `components` directory sits next to the process, it is
+instead rebuilt from those files on every request so edits hot-reload.
 
 ## Component Props
 
-Every component accepts three universal props that are left out of the per-component API tables:
+Every component accepts three universal props that are left out of the
+per-component API tables:
 
-| Prop         | Type               | Description                                          |
-| ------------ | ------------------ | ---------------------------------------------------- |
-| `ID`         | `string`           | HTML id for the rendered element.                    |
+| Prop         | Type               | Description                                         |
+| ------------ | ------------------ | --------------------------------------------------- |
+| `ID`         | `string`           | HTML id for the rendered element.                   |
 | `Class`      | `string`           | Additional CSS classes, merged with the defaults.    |
-| `Attributes` | `templ.Attributes` | Additional HTML attributes spread onto the element.  |
+| `Attributes` | `templ.Attributes` | Additional HTML attributes spread onto the element. |
 
-Standard HTML behavior (`Disabled`, `Type`, `Href`, ...) works the way the platform defines it; the API tables only document what a component adds on top.
+Standard HTML behavior (`Disabled`, `Type`, `Href`, ...) works the way the
+platform defines it; the API tables only document what a component adds on top.

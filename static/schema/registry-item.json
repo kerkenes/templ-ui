@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://shadcn-templ.com/schema/registry-item.json",
-  "title": "shadcn-templ registry item",
-  "description": "A single item in a shadcn-templ registry.",
+  "$id": "https://templ-ui.muratkirazkaya.com/schema/registry-item.json",
+  "title": "templ-ui registry item",
+  "description": "A single item in a templ-ui registry.",
   "type": "object",
   "properties": {
     "$schema": {
@@ -10,7 +10,7 @@
     },
     "name": {
       "type": "string",
-      "description": "The kebab-case name of the item, used by the CLI (shadcn-templ add <name>)."
+      "description": "The kebab-case name of the item, used by the CLI (templ-ui add <name>)."
     },
     "type": {
       "type": "string",

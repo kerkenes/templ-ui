@@ -31,7 +31,7 @@
   var PREVIEW_OVERRIDE_DEBOUNCE_MS = 50;
   // Our own persistence carries our name; only the key differs from the
   // reference ("shadcn-create-welcome-dialog").
-  var WELCOME_STORAGE_KEY = "shadcn-templ-create-welcome-dialog";
+  var WELCOME_STORAGE_KEY = "templ-ui-create-welcome-dialog";
   var DEFAULT_ITEM = "preview-02";
 
   // lib/search-params.ts DESIGN_SYSTEM_KEYS.
@@ -741,13 +741,13 @@
   // no package manager variants (the CLI installs via go install) and one
   // template (-t templ scaffolds the runnable project like their -t next).
   function initCommand() {
-    return "shadcn-templ init -t templ --preset " + getPresetCode(params);
+    return "templ-ui init -t templ --preset " + getPresetCode(params);
   }
 
   function applyCommand() {
     var onlyFlag =
       applyMode === "theme" ? " --only theme" : applyMode === "font" ? " --only font" : "";
-    return "shadcn-templ apply --preset " + getPresetCode(params) + onlyFlag;
+    return "templ-ui apply --preset " + getPresetCode(params) + onlyFlag;
   }
 
   function copyTargetText(target) {

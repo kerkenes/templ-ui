@@ -5,12 +5,12 @@ description: "Utilities for adding a shimmer effect to text elements."
 
 ## Installation
 
-If your project was set up with `shadcn-templ init`, you already have `shimmer`. It ships in the vendored `shadcn-tailwind.css`, which the CLI imports in your Tailwind entry file.
+If your project was set up with `templ-ui init`, you already have `shimmer`. It ships in the vendored `shadcn-tailwind.css`, which the CLI imports in your Tailwind entry file.
 
 Otherwise, vendor the stylesheet next to your Tailwind entry file:
 
 ```shell
-curl -o assets/css/shadcn-tailwind.css https://shadcn-templ.com/assets/css/shadcn-tailwind.css
+curl -o assets/css/shadcn-tailwind.css https://templ-ui.muratkirazkaya.com/assets/css/shadcn-tailwind.css
 ```
 
 Then import the shared utilities in your Tailwind entry file:
@@ -131,6 +131,6 @@ When the user prefers reduced motion, the animation is disabled automatically an
 
 ## RTL
 
-To install RTL-compiled components, see the [`rtl` setting](/docs/components-json#rtl) in your `components.json`.
+The utility flips with the document direction on its own: set `dir="rtl"` on `<html>` (or on any ancestor) and the fade follows it. The shipped stylesheet carries both directions.
 
 The sweep follows the reading direction, left to right in LTR and right to left in RTL, with no extra classes. Use `shimmer-reverse` to flip the direction manually.

@@ -25,7 +25,7 @@ func TestTransformStyleButtonTempl(t *testing.T) {
 	if !strings.Contains(out, `return "`+novaButtonVariantDefault+`"`) {
 		t.Errorf("default variant did not expand to the exact nova utilities")
 	}
-	// \bcn- keeps the module path (shadcn-templ) out of the match.
+	// \bcn- keeps the module path (templ-ui) out of the match.
 	if regexp.MustCompile(`\bcn-`).MatchString(out) {
 		t.Errorf("inlined output still contains cn-")
 	}

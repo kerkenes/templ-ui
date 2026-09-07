@@ -1,7 +1,7 @@
 {
-  "$schema": "https://shadcn-templ.com/schema/registry.json",
-  "name": "shadcn-templ",
-  "homepage": "https://shadcn-templ.com",
+  "$schema": "https://templ-ui.muratkirazkaya.com/schema/registry.json",
+  "name": "templ-ui",
+  "homepage": "https://templ-ui.muratkirazkaya.com",
   "items": [
     {
       "name": "accordion",
@@ -1058,7 +1058,7 @@
       "description": "Core utility functions and asset URLs",
       "files": [
         {
-          "path": "utils/shadcn-templ.go",
+          "path": "utils/templ-ui.go",
           "type": "registry:lib"
         }
       ]

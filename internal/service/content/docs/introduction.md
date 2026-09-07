@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "shadcn-templ is a set of beautifully-designed, accessible components and a code distribution platform. Works with Go, templ and your favorite AI models. Open Source. Open Code."
+description: "templ-ui is a set of beautifully-designed, accessible components for Go and templ, imported as a Go module. Works with your favorite AI models. Open Source."
 order: 1
 ---
 
@@ -10,7 +10,7 @@ You know how most traditional component libraries work: you install a package wi
 
 This approach works well until you need to customize a component to fit your design system or require one that isn't included in the library. **Often, you end up wrapping library components, writing workarounds to override styles, or mixing components from different libraries with incompatible APIs.**
 
-This is what shadcn-templ aims to solve. It is built around the following principles:
+This is what templ-ui aims to solve. It is built around the following principles:
 
 - **Open Code:** The top layer of your component code is open for modification.
 - **Composition:** Every component uses a common, composable interface, making them predictable.
@@ -20,29 +20,29 @@ This is what shadcn-templ aims to solve. It is built around the following princi
 
 ## Open Code
 
-shadcn-templ hands you the actual component code. You have full control to customize and extend the components to your needs. This means:
+templ-ui hands you the actual component code. You have full control to customize and extend the components to your needs. This means:
 
 - **Full Transparency:** You see exactly how each component is built.
 - **Easy Customization:** Modify any part of a component to fit your design and functionality requirements.
 - **AI Integration:** Access to the code makes it straightforward for LLMs to read, understand, and even improve your components.
 
-_In a typical library, if you need to change a button's behavior, you have to override styles or wrap the component. With shadcn-templ, you simply edit the button code directly._
+_In a typical library, if you need to change a button's behavior, you have to override styles or wrap the component. With templ-ui, you simply edit the button code directly._
 
 <Callout className="mt-6">
 
-**How do I pull upstream updates in an Open Code approach?** The behavior core of every component is ported from headless sources like Base UI into its script and kept current by the CLI: fixes arrive through `shadcn-templ add` and the upgrade command. The topmost layer, the one closest to your design system, is not coupled with that implementation. It stays open for modification.
+**How do I pull upstream updates in an Open Code approach?** The behavior core of every component is ported from headless sources like Base UI into its script and kept current by the CLI: fixes arrive through `templ-ui add` and the upgrade command. The topmost layer, the one closest to your design system, is not coupled with that implementation. It stays open for modification.
 
 </Callout>
 
 ## Composition
 
-Every component in shadcn-templ shares a common, composable interface. **If a component does not exist, we bring it in, make it composable, and adjust its style to match and work with the rest of the design system.**
+Every component in templ-ui shares a common, composable interface. **If a component does not exist, we bring it in, make it composable, and adjust its style to match and work with the rest of the design system.**
 
 _A shared, composable interface means it's predictable for both your team and LLMs. You are not learning different APIs for every new component. Even for third-party ones._
 
 ## Distribution
 
-shadcn-templ is also a code distribution system. It defines a schema for components and a CLI to distribute them.
+templ-ui is also a code distribution system. It defines a schema for components and a CLI to distribute them.
 
 - **Schema:** A flat-file structure that defines the components, their dependencies, and properties.
 - **CLI:** A command-line tool to distribute and install components across projects.
@@ -51,7 +51,7 @@ _You can use the schema to distribute your components to other projects or have 
 
 ## Beautiful Defaults
 
-shadcn-templ comes with a large collection of components that have carefully chosen default styles. They are designed to look good on their own and to work well together as a consistent system:
+templ-ui comes with a large collection of components that have carefully chosen default styles. They are designed to look good on their own and to work well together as a consistent system:
 
 - **Good Out-of-the-Box:** Your UI has a clean and minimal look without extra work.
 - **Unified Design:** Components naturally fit with one another. Each component is built to match the others, keeping your UI consistent.
@@ -59,12 +59,12 @@ shadcn-templ comes with a large collection of components that have carefully cho
 
 ## AI-Ready
 
-The design of shadcn-templ makes it easy for AI tools to work with your code. Its open code and consistent API allow AI models to read, understand, and even generate new components.
+The design of templ-ui makes it easy for AI tools to work with your code. Its open code and consistent API allow AI models to read, understand, and even generate new components.
 
 _An AI model can learn how your components work and suggest improvements or even create new components that integrate with your existing design._
 
-shadcn-templ is the templ pendant of [shadcn/ui](https://ui.shadcn.com) and follows its principles. If you prefer plain Go imports without copying code, that exists as a shadcn-templ extra: the [Import Workflow](/docs/import-workflow).
+templ-ui is the templ pendant of [shadcn/ui](https://ui.shadcn.com) and follows its design principles, with one deliberate difference: components are imported from a Go module rather than copied into your repository. See [Installation](/docs/installation).
 
 ## Credits
 
-shadcn-templ is an unofficial, community-led port of shadcn/ui for Go and templ. We are not affiliated with [shadcn](https://x.com/shadcn), but we did get his blessing before creating this project. The designs, methodology and API surface are his work. The vanilla JavaScript ports of [Base UI](https://base-ui.com) behavior and the Go/[templ](https://templ.guide) implementation are ours.
+templ-ui is an unofficial, community-led port of shadcn/ui for Go and templ. We are not affiliated with [shadcn](https://x.com/shadcn), but we did get his blessing before creating this project. The designs, methodology and API surface are his work. The vanilla JavaScript ports of [Base UI](https://base-ui.com) behavior and the Go/[templ](https://templ.guide) implementation are ours.

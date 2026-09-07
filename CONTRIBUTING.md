@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to shadcn-templ.com. We're happy to have you here.
+Thanks for your interest in contributing to templ-ui.muratkirazkaya.com. We're happy to have you here.
 
 Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
 
@@ -21,7 +21,7 @@ This repository is structured as follows:
 ```
 cmd
 ├── docs
-└── shadcn-templ
+└── templ-ui
 components
 internal
 ├── service
@@ -48,13 +48,13 @@ You can fork this repo by clicking the fork button in the top right corner of th
 ### Clone on your local machine
 
 ```bash
-git clone https://github.com/your-username/shadcn-templ.git
+git clone https://github.com/your-username/templ-ui.git
 ```
 
 ### Navigate to project directory
 
 ```bash
-cd shadcn-templ
+cd templ-ui
 ```
 
 ### Create a new Branch

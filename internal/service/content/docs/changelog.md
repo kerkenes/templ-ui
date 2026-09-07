@@ -3,4 +3,4 @@ title: Changelog
 description: Latest updates and announcements.
 ---
 
-Latest updates and announcements for shadcn-templ.
+Latest updates and announcements for templ-ui.

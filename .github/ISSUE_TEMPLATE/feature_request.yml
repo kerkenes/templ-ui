@@ -1,5 +1,5 @@
 name: "Feature request"
-description: Create a feature request for shadcn-templ
+description: Create a feature request for templ-ui
 title: '[feat]: '
 labels: ['area: request']
 body:

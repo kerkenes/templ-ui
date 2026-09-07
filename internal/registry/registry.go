@@ -10,7 +10,7 @@ import (
 	"log"
 	"slices"
 
-	shadcntempl "github.com/kerkenes/templ-ui"
+	templui "github.com/kerkenes/templ-ui"
 )
 
 // File is one files[] entry of a registry item. Target is the explicit
@@ -23,7 +23,7 @@ type File struct {
 }
 
 // Item is a registry item in shadcn's registry-item.json schema (the fields
-// shadcn-templ uses).
+// templ-ui uses).
 type Item struct {
 	Name                 string   `json:"name"`
 	Type                 string   `json:"type"`
@@ -68,7 +68,7 @@ func Get() *Registry {
 	}
 
 	var r Registry
-	err := json.Unmarshal(shadcntempl.RegistryJSON, &r)
+	err := json.Unmarshal(templui.RegistryJSON, &r)
 	if err != nil {
 		log.Printf("Error parsing registry.json: %v", err)
 		return &Registry{} // Return empty registry on error
@@ -81,7 +81,7 @@ func Get() *Registry {
 // JSON returns the raw registry.json bytes, served verbatim on
 // GET /r/registry.json.
 func JSON() []byte {
-	return shadcntempl.RegistryJSON
+	return templui.RegistryJSON
 }
 
 // Components returns the registry:ui items.

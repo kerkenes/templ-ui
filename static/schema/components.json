@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://shadcn-templ.com/schema/components.json",
-  "title": "shadcn-templ components.json",
-  "description": "Configuration for the shadcn-templ CLI, the pendant of shadcn's schema.json.",
+  "$id": "https://templ-ui.muratkirazkaya.com/schema/components.json",
+  "title": "templ-ui components.json",
+  "description": "Configuration for the templ-ui CLI, the pendant of shadcn's schema.json.",
   "type": "object",
   "properties": {
     "$schema": {

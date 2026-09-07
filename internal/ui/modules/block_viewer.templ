@@ -35,7 +35,7 @@ templ BlockViewer(entry BlockEntry) {
 
 // blockViewerToolbar is the BlockViewerToolbar pendant: view tabs, the
 // description anchor, viewport toggle group, open-in-new-tab, refresh and
-// the CLI add command copy button. The OpenInV0 button has no shadcn-templ
+// the CLI add command copy button. The OpenInV0 button has no templ-ui
 // pendant and stays out.
 templ blockViewerToolbar(entry BlockEntry) {
 	<div class="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
@@ -101,7 +101,7 @@ templ blockViewerToolbar(entry BlockEntry) {
 				Variant:    button.VariantOutline,
 				Size:       button.SizeSm,
 				Class:      "w-fit gap-1 px-2 shadow-none",
-				Attributes: templ.Attributes{"data-tui-block-add": "shadcn-templ add " + entry.Name},
+				Attributes: templ.Attributes{"data-tui-block-add": "templ-ui add " + entry.Name},
 			}) {
 				<span data-tui-block-add-idle>
 					@icon.Terminal()
@@ -109,7 +109,7 @@ templ blockViewerToolbar(entry BlockEntry) {
 				<span data-tui-block-add-done class="hidden">
 					@icon.Check()
 				</span>
-				<span>shadcn-templ add { entry.Name }</span>
+				<span>templ-ui add { entry.Name }</span>
 			}
 		</div>
 	</div>
@@ -257,7 +257,7 @@ templ blockViewerTreeNode(entry BlockEntry, node *blockFileTree, index int) {
 }
 
 // blockViewerMobile is the BlockViewerMobile pendant. shadcn shows baked
-// screenshots below lg; shadcn-templ has no image pipeline, so the live
+// screenshots below lg; templ-ui has no image pipeline, so the live
 // iframe rides in the 4/2.5 box instead.
 templ blockViewerMobile(entry BlockEntry) {
 	<div class="flex flex-col gap-2 lg:hidden">

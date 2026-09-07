@@ -20,7 +20,7 @@ var contentFS embed.FS
 
 // readContent prefers the on-disk source in development, so markdown edits
 // show up on reload without recompiling the embedded copy. Falls back to
-// the embed for built binaries. Self-referencing shadcn-templ.com URLs are rebased
+// the embed for built binaries. Self-referencing templ-ui.muratkirazkaya.com URLs are rebased
 // onto BaseURL, so rendered pages and raw .md exports link the running origin.
 func readContent(path string) ([]byte, error) {
 	if b, err := os.ReadFile(filepath.Join("internal/service", path)); err == nil {
@@ -249,7 +249,7 @@ const (
 // content/docs/components/index.mdx: frontmatter, then the New Components and
 // All Components lists in the order the page renders them, every entry an
 // absolute link carrying the description from the component doc's frontmatter.
-// The reference closes with a pointer to its registry directory; shadcn-templ
+// The reference closes with a pointer to its registry directory; templ-ui
 // has no directory page, so that section stays out, like the nav is without it.
 func (s *DocsService) ComponentsIndexSource() []byte {
 	var b strings.Builder

@@ -93,7 +93,7 @@ func StylesHandler() http.Handler {
 
 		// The install-config half of shadcn's CLI transformers: the CLI
 		// sends its project menuColor, rtl and font-heading support; the markers resolve here
-		// (shadcn-templ has no separate install step).
+		// (templ-ui has no separate install step).
 		opts := inliner.Options{
 			RTL:         r.URL.Query().Get("rtl") == "true",
 			FontHeading: r.URL.Query().Get("fontHeading") == "true",

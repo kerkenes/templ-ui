@@ -140,7 +140,7 @@ var createFontsSerif = []createOption{
 	{Value: "instrument-serif", Label: "Instrument Serif"},
 }
 
-// shadcn/icons libraries order. Only lucide ships in shadcn-templ.
+// shadcn/icons libraries order. Only lucide ships in templ-ui.
 var createIconLibraries = []createOption{
 	{Value: "lucide", Label: "Lucide"},
 	{Value: "tabler", Label: "Tabler Icons", Disabled: true},
@@ -1069,7 +1069,7 @@ func Create() templ.Component {
 			}
 			return nil
 		})
-		templ_7745c5c3_Err = layouts.BaseLayout("New Project", "Customize everything. Pick your base color, theme, fonts and create your own version of shadcn-templ.").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = layouts.BaseLayout("New Project", "Customize everything. Pick your base color, theme, fonts and create your own version of templ-ui.").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -3854,7 +3854,7 @@ func createResetDialog() templ.Component {
 }
 
 // APPLY_MODES verbatim from project-form.tsx: the radio driving the
-// `shadcn-templ apply --preset <code> [--only theme|font]` command.
+// `templ-ui apply --preset <code> [--only theme|font]` command.
 var createApplyModes = []struct{ Value, Title, Description string }{
 	{"full", "Full preset", "Everything from the preset, including components, theme, and fonts."},
 	{"theme", "Theme only", "Theme tokens only, like colors, radii, and shadows. Components stay as they are."},
@@ -3867,11 +3867,11 @@ var createApplyModes = []struct{ Value, Title, Description string }{
 //
 // Deliberate omissions against the tsx, all npm-only: the framework template
 // grid, the Base component-library grid and the pointer/monorepo/RTL switches
-// (shadcn-templ init scaffolds no frameworks and takes no such flags), and the
+// (templ-ui init scaffolds no frameworks and takes no such flags), and the
 // package manager Tabs (Go has exactly one toolchain), so each command
-// renders in a single box with a static "shadcn-templ" label where the pm TabsList
-// sits. The commands are the real CLI: `shadcn-templ init --preset <code>` and
-// `shadcn-templ apply --preset <code> [--only theme|font]`.
+// renders in a single box with a static "templ-ui" label where the pm TabsList
+// sits. The commands are the real CLI: `templ-ui init --preset <code>` and
+// `templ-ui apply --preset <code> [--only theme|font]`.
 func createCodeDialog() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -4108,7 +4108,7 @@ func createCodeDialog() templ.Component {
 								}()
 							}
 							ctx = templ.InitializeContext(ctx)
-							templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 178, "Scaffolds a new templ project with this preset. Get the CLI with <code class=\"font-mono\">go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest</code>.")
+							templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 178, "Scaffolds a new templ project with this preset. Get the CLI with <code class=\"font-mono\">go install github.com/kerkenes/templ-ui/cmd/templ-ui@latest</code>.")
 							if templ_7745c5c3_Err != nil {
 								return templ_7745c5c3_Err
 							}
@@ -4146,7 +4146,7 @@ func createCodeDialog() templ.Component {
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = createCommandBox("command", "init", "shadcn-templ init -t templ --preset b0").Render(ctx, templ_7745c5c3_Buffer)
+					templ_7745c5c3_Err = createCommandBox("command", "init", "templ-ui init -t templ --preset b0").Render(ctx, templ_7745c5c3_Buffer)
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
@@ -4276,7 +4276,7 @@ func createCodeDialog() templ.Component {
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = createCommandBox("apply", "apply", "shadcn-templ apply --preset b0").Render(ctx, templ_7745c5c3_Buffer)
+					templ_7745c5c3_Err = createCommandBox("apply", "apply", "templ-ui apply --preset b0").Render(ctx, templ_7745c5c3_Buffer)
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
@@ -4610,7 +4610,7 @@ func createApplyModeGrid() templ.Component {
 
 // createCommandBox is the command Tabs pendant reduced to the single Go
 // runner: the reference header row keeps its layout (pm TabsList left, icon
-// copy button right) with a static "shadcn-templ" label in the TabsList slot, the
+// copy button right) with a static "templ-ui" label in the TabsList slot, the
 // command sits in the bg-popover content row. create.js keeps the command
 // text live with the current preset code (data-tui-create-command).
 func createCommandBox(target, command, initial string) templ.Component {
@@ -4634,7 +4634,7 @@ func createCommandBox(target, command, initial string) templ.Component {
 			templ_7745c5c3_Var207 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 197, "<div class=\"w-full min-w-0 overflow-hidden rounded-xl border-0 ring-1 ring-border\"><div class=\"flex items-center gap-2 py-1 pr-1.5 pl-3\"><div class=\"min-w-0 truncate font-mono text-sm text-muted-foreground\">shadcn-templ</div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 197, "<div class=\"w-full min-w-0 overflow-hidden rounded-xl border-0 ring-1 ring-border\"><div class=\"flex items-center gap-2 py-1 pr-1.5 pl-3\"><div class=\"min-w-0 truncate font-mono text-sm text-muted-foreground\">templ-ui</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -5182,7 +5182,7 @@ func createWelcomeDialog() templ.Component {
 							}()
 						}
 						ctx = templ.InitializeContext(ctx)
-						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 211, "Build your own shadcn-templ")
+						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 211, "Build your own templ-ui")
 						if templ_7745c5c3_Err != nil {
 							return templ_7745c5c3_Err
 						}

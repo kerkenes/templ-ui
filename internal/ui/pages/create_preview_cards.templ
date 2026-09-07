@@ -2744,7 +2744,7 @@ templ cardCodespaces() {
 					}
 					@separator.Separator(separator.Props{Class: "-mx-2 my-2 w-auto!"})
 					<div class="p-1.5 text-xs text-muted-foreground">
-						Codespace usage for this repository is paid for by <span class="font-medium">shadcn-templ</span>.
+						Codespace usage for this repository is paid for by <span class="font-medium">templ-ui</span>.
 					</div>
 				}
 				@tabs.Content(tabs.ContentProps{Value: "local"}) {
@@ -2795,7 +2795,7 @@ templ cardCodespaces() {
 									@field.Label(field.LabelProps{For: "ssh-url", Class: "sr-only"}) {
 										SSH URL
 									}
-									@cloneURLInputGroup("ssh-url", "git@github.com:axadrn/shadcn-templ.git")
+									@cloneURLInputGroup("ssh-url", "git@github.com:axadrn/templ-ui.git")
 									@field.Description() {
 										Use a password-protected SSH key.
 									}
@@ -2806,7 +2806,7 @@ templ cardCodespaces() {
 									@field.Label(field.LabelProps{For: "cli-command", Class: "sr-only"}) {
 										CLI Command
 									}
-									@cloneURLInputGroup("cli-command", "gh repo clone axadrn/shadcn-templ")
+									@cloneURLInputGroup("cli-command", "gh repo clone axadrn/templ-ui")
 									@field.Description() {
 										Work fast with our official CLI. <a href="#learn-more">Learn more</a>
 									}

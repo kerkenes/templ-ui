@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 
-	shadcntempl "github.com/kerkenes/templ-ui"
+	templui "github.com/kerkenes/templ-ui"
 	"github.com/kerkenes/templ-ui/assets"
 	"github.com/kerkenes/templ-ui/blocks"
 	"github.com/kerkenes/templ-ui/components"
@@ -27,7 +27,7 @@ func isDevelopment() bool {
 	return os.Getenv("GO_ENV") != "production"
 }
 
-// StyleNames returns the routable style names: shadcn-templ's single base
+// StyleNames returns the routable style names: templ-ui's single base
 // prefixed onto every style (base-vega .. base-rhea).
 func StyleNames() []string {
 	out := make([]string, len(Styles))
@@ -90,14 +90,14 @@ func styleMapFor(bare string) (inliner.StyleMap, error) {
 }
 
 // componentSource reads a registry file path ("components/button/button.templ",
-// "blocks/sidebar07/page.templ", "utils/shadcntempl.go") from disk in
+// "blocks/sidebar07/page.templ", "utils/templui.go") from disk in
 // development, from the embeds in production.
 func componentSource(filePath string) ([]byte, error) {
 	if isDevelopment() {
 		return os.ReadFile("./" + filePath)
 	}
 	if strings.HasPrefix(filePath, "utils/") {
-		return shadcntempl.UtilsFiles.ReadFile(filePath)
+		return templui.UtilsFiles.ReadFile(filePath)
 	}
 	if strings.HasPrefix(filePath, "blocks/") {
 		return blocks.TemplFiles.ReadFile(strings.TrimPrefix(filePath, "blocks/"))

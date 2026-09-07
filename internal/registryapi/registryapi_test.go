@@ -348,7 +348,7 @@ func TestBuildStyleItem(t *testing.T) {
 		t.Fatalf("files = %+v", item.Files)
 	}
 	content := item.Files[0].Content
-	// \bcn- keeps the module path (shadcn-templ) out of the match.
+	// \bcn- keeps the module path (templ-ui) out of the match.
 	if regexp.MustCompile(`\bcn-`).MatchString(content) {
 		t.Error("compiled content still contains cn-* markers")
 	}
@@ -397,7 +397,7 @@ func TestBuildStyleItem(t *testing.T) {
 		t.Error("unknown style returned an item")
 	}
 	if item, _ := BuildStyleItem("radix-nova", "button", inliner.Options{}); item != nil {
-		t.Error("radix base must 404, shadcn-templ has only base-*")
+		t.Error("radix base must 404, templ-ui has only base-*")
 	}
 	if item, _ := BuildStyleItem("base-nova", "bogus", inliner.Options{}); item != nil {
 		t.Error("unknown component returned an item")

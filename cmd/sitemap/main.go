@@ -98,7 +98,7 @@ func priority(route string) string {
 }
 
 func main() {
-	baseURL := flag.String("baseurl", "https://shadcn-templ.com", "Base URL for the sitemap")
+	baseURL := flag.String("baseurl", "https://templ-ui.muratkirazkaya.com", "Base URL for the sitemap")
 	outputFile := flag.String("output", "static/sitemap.xml", "Path to output file")
 	flag.Parse()
 

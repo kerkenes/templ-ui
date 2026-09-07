@@ -16055,7 +16055,7 @@ func cardCodespaces() templ.Component {
 						if templ_7745c5c3_Err != nil {
 							return templ_7745c5c3_Err
 						}
-						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 627, " <div class=\"p-1.5 text-xs text-muted-foreground\">Codespace usage for this repository is paid for by <span class=\"font-medium\">shadcn-templ</span>.</div>")
+						templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 627, " <div class=\"p-1.5 text-xs text-muted-foreground\">Codespace usage for this repository is paid for by <span class=\"font-medium\">templ-ui</span>.</div>")
 						if templ_7745c5c3_Err != nil {
 							return templ_7745c5c3_Err
 						}
@@ -16485,7 +16485,7 @@ func cardCodespaces() templ.Component {
 									if templ_7745c5c3_Err != nil {
 										return templ_7745c5c3_Err
 									}
-									templ_7745c5c3_Err = cloneURLInputGroup("ssh-url", "git@github.com:axadrn/shadcn-templ.git").Render(ctx, templ_7745c5c3_Buffer)
+									templ_7745c5c3_Err = cloneURLInputGroup("ssh-url", "git@github.com:axadrn/templ-ui.git").Render(ctx, templ_7745c5c3_Buffer)
 									if templ_7745c5c3_Err != nil {
 										return templ_7745c5c3_Err
 									}
@@ -16577,7 +16577,7 @@ func cardCodespaces() templ.Component {
 									if templ_7745c5c3_Err != nil {
 										return templ_7745c5c3_Err
 									}
-									templ_7745c5c3_Err = cloneURLInputGroup("cli-command", "gh repo clone axadrn/shadcn-templ").Render(ctx, templ_7745c5c3_Buffer)
+									templ_7745c5c3_Err = cloneURLInputGroup("cli-command", "gh repo clone axadrn/templ-ui").Render(ctx, templ_7745c5c3_Buffer)
 									if templ_7745c5c3_Err != nil {
 										return templ_7745c5c3_Err
 									}

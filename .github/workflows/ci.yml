@@ -1,0 +1,41 @@
+# Pull requests get the build and the tests; main gets them before deploy.yml
+# ships an image. templ generate runs here because the generated files for
+# internal/ are not committed, so nothing under internal/ui compiles without it.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Generate templ files
+        run: go tool templ generate
+
+      - name: Build
+        run: go build ./...
+
+      - name: Test
+        run: go test ./...
+
+      # The stylesheet consumers link is committed, so a change to the
+      # components or the styles that was never recompiled has to fail here
+      # rather than ship stale CSS.
+      - name: Stylesheet is up to date
+        run: |
+          npm ci
+          npx @tailwindcss/cli --cwd components -i ../assets/css/globals.css -o ../assets/css/templ-ui.css --minify
+          git diff --exit-code -- assets/css/templ-ui.css
