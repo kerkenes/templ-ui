@@ -7,6 +7,17 @@
 # Secrets live in this repository, so a pull request from a fork gets no
 # preview: GitHub withholds them from fork runs, and the deploy would fail at
 # the login step.
+#
+# PAUSED (2026-09-07): Coolify 4.0.0-beta.459's /api/v1/deploy doesn't
+# actually create a per-PR resource for pull_request_id + docker_tag -- its
+# own response says "Application templ-ui deployment queued", the plain
+# wording of a normal deploy, and no container for the pr-N tag ever gets
+# created (`docker ps -a --filter ancestor=...:pr-N` comes back empty). The
+# Traefik router for <pr>.templ-ui.muratkirazkaya.com still exists (from the
+# static Preview URL Template), so it 503s with "no available server"
+# instead of 404ing -- looks like a routing bug at first, isn't one. Jobs
+# below are gated off with `if: false` rather than deleted; flip that back
+# once Coolify's preview-deployment support is confirmed to work.
 name: preview
 
 on:
@@ -26,6 +37,7 @@ concurrency:
 jobs:
   deploy:
     if: >-
+      false &&
       github.event.action != 'closed' &&
       github.event.action != 'unlabeled' &&
       contains(github.event.pull_request.labels.*.name, 'deploy-preview')
@@ -67,10 +79,11 @@ jobs:
   # The preview outlives neither the pull request nor the label.
   teardown:
     if: >-
-      (github.event.action == 'closed' &&
-       contains(github.event.pull_request.labels.*.name, 'deploy-preview')) ||
-      (github.event.action == 'unlabeled' &&
-       github.event.label.name == 'deploy-preview')
+      false &&
+      ((github.event.action == 'closed' &&
+        contains(github.event.pull_request.labels.*.name, 'deploy-preview')) ||
+       (github.event.action == 'unlabeled' &&
+        github.event.label.name == 'deploy-preview'))
     runs-on: ubuntu-24.04
     steps:
       - name: Delete the preview
