@@ -1,31 +1,16 @@
 package modules
 
 import (
-	"fmt"
 	"github.com/kerkenes/templ-ui/components/button"
 	"github.com/kerkenes/templ-ui/components/icon"
 	"github.com/kerkenes/templ-ui/components/separator"
 	"github.com/kerkenes/templ-ui/components/sheet"
-	"github.com/kerkenes/templ-ui/internal/ctxkeys"
 	"github.com/kerkenes/templ-ui/internal/shared"
 	wrappedicon "github.com/kerkenes/templ-ui/internal/ui/icons"
 )
 
-func formatStars(count int) string {
-	if count >= 1000 {
-		return fmt.Sprintf("%.1fk", float64(count)/1000)
-	}
-	return fmt.Sprintf("%d", count)
-}
-
 templ Navbar() {
 	<nav class="py-4">
-		{{ stars := 0 }}
-		{{
-			if starsVal := ctx.Value(ctxkeys.GitHubStars); starsVal != nil {
-				stars = starsVal.(int)
-			}
-		}}
 		<div class="px-6 flex justify-between items-center relative">
 			<div class="flex items-center">
 				@NavbarMobileMenu()
@@ -62,9 +47,6 @@ templ Navbar() {
 					Class:   "gap-1",
 				}) {
 					@wrappedicon.GitHub(20)
-					if stars > 0 {
-						<span class="text-muted-foreground text-xs tabular-nums">{ formatStars(stars) }</span>
-					}
 				}
 				@separator.Separator(separator.Props{
 					Orientation: separator.OrientationVertical,

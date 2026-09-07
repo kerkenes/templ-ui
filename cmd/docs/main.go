@@ -66,9 +66,7 @@ func main() {
 
 	wrappedMux := middleware.WithURLPathValue(
 		middleware.CacheControlMiddleware(
-			middleware.GitHubStarsMiddleware(
-				mux,
-			),
+			mux,
 		),
 	)
 
