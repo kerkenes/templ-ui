@@ -1,0 +1,74 @@
+# Per-pull-request previews, off by default: nothing happens until the
+# deploy-preview label is on the PR. The image is built here, one tag per PR,
+# and Coolify deploys that tag as a preview of the Docker Image application
+# (docker_tag requires pull_request_id). The preview lands on
+# <pr>.templ-ui.muratkirazkaya.com, from the preview URL template.
+#
+# Secrets live in this repository, so a pull request from a fork gets no
+# preview: GitHub withholds them from fork runs, and the deploy would fail at
+# the login step.
+name: preview
+
+on:
+  pull_request:
+    types: [labeled, unlabeled, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+  packages: write
+
+# A push to a labelled PR supersedes the build already running for it.
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: >-
+      github.event.action != 'closed' &&
+      github.event.action != 'unlabeled' &&
+      contains(github.event.pull_request.labels.*.name, 'deploy-preview')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: ghcr.io/kerkenes/templ-ui:pr-${{ github.event.pull_request.number }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Deploy the preview
+        run: |
+          curl -fsS -X POST "${{ secrets.COOLIFY_URL }}/api/v1/deploy?uuid=${{ secrets.COOLIFY_APP_UUID }}&pull_request_id=${{ github.event.pull_request.number }}&docker_tag=pr-${{ github.event.pull_request.number }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+
+      - name: Say where it went
+        run: |
+          echo "Preview: https://${{ github.event.pull_request.number }}.templ-ui.muratkirazkaya.com" >> $GITHUB_STEP_SUMMARY
+
+  # The preview outlives neither the pull request nor the label.
+  teardown:
+    if: >-
+      (github.event.action == 'closed' &&
+       contains(github.event.pull_request.labels.*.name, 'deploy-preview')) ||
+      (github.event.action == 'unlabeled' &&
+       github.event.label.name == 'deploy-preview')
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Delete the preview
+        run: |
+          code=$(curl -sS -o /dev/null -w '%{http_code}' -X DELETE "${{ secrets.COOLIFY_URL }}/api/v1/applications/${{ secrets.COOLIFY_APP_UUID }}/previews/${{ github.event.pull_request.number }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}")
+          echo "coolify answered $code"
+          # 404 means it was already gone, which is the state we wanted anyway.
+          test "$code" = 200 || test "$code" = 204 || test "$code" = 404
