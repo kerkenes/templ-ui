@@ -2,319 +2,331 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/llms.txt</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/{$}</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/getting-started</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/themes</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/introduction</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/how-to-use</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/accordion</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/alert</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/aspect-ratio</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/avatar</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/badge</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/breadcrumb</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/button</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/calendar</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/card</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/carousel</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/charts</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/checkbox</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/collapsible</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/copy-button</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/date-picker</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/sheet</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/dropdown</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/form</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/icon</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/input</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/input-otp</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/label</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/dialog</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/pagination</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/progress</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/radio</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/rating</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/select-box</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/segmented-process</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/separator</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/sidebar</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/sidebar-fullscreen</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/sidebar-preview</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/skeleton</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/slider</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/table</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/tabs</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/tags-input</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/textarea</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/time-picker</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/toast</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/switch</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/tooltip</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/popover</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/components/hover-card</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/docs/test-form-items</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://templ-ui.muratkirazkaya.com/components/js/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

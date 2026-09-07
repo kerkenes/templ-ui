@@ -44,9 +44,12 @@ func findRoutes(routesFile string) ([]string, error) {
 	for _, match := range matches {
 		if len(match) > 1 {
 			route := match[1]
-			// Ignore sitemap and robots routes
+			// Ignore sitemap, robots, and internal/debug routes -- the
+			// latter only exists behind HIGHLIGHT_DUMP=1 during the
+			// build-time crawl and was never meant to be public.
 			if route != "/sitemap.xml" && route != "/robots.txt" &&
-				!regexp.MustCompile(`^/assets/`).MatchString(route) {
+				!regexp.MustCompile(`^/assets/`).MatchString(route) &&
+				!regexp.MustCompile(`^/debug/`).MatchString(route) {
 				routes = append(routes, route)
 			}
 		}
