@@ -77,7 +77,7 @@ func getGitHubStars() int {
 
 	// Fetch fresh data
 	client := &http.Client{Timeout: 5 * time.Second}
-	req, err := http.NewRequest("GET", "https://api.github.com/repos/axadrn/shadcn-templ", nil)
+	req, err := http.NewRequest("GET", "https://api.github.com/repos/kerkenes/templ-ui", nil)
 	if err != nil {
 		return githubStarsCache.stars
 	}

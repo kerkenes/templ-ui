@@ -13,7 +13,7 @@ permissions:
 jobs:
   stale:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'axadrn'
+    if: github.repository_owner == 'kerkenes'
     steps:
       - uses: actions/stale@v9
         id: issue-stale

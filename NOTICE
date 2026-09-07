@@ -1,0 +1,13 @@
+templ-ui
+
+This project is a fork of shadcn-templ (https://github.com/axadrn/shadcn-templ),
+copyright (c) 2023 Axel Adrian, MIT licensed. The fork keeps the components and
+their styling, and changes how they are distributed: shadcn-templ copies sources
+into your repository with a CLI, templ-ui is imported as a Go module.
+
+shadcn-templ is itself a port of shadcn/ui (https://ui.shadcn.com), copyright
+(c) 2023 shadcn, MIT licensed. The style sheets under assets/css/styles are
+vendored from that project, as are tw-animate-css and the typeset styles noted
+in assets/css/globals.css.
+
+Neither project is affiliated with this fork.

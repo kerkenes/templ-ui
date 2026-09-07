@@ -1,19 +1,66 @@
-# shadcn-templ
+# templ-ui
 
-shadcn/ui for templ. A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library.**
+shadcn/ui components for Go and [templ](https://templ.guide), distributed as a
+Go module: `go get` them, import them, upgrade them like any other dependency.
 
-shadcn-templ is an unofficial, community-led port of [shadcn/ui](https://ui.shadcn.com) for Go and templ. We are not affiliated with [shadcn](https://x.com/shadcn), but we did get his blessing before creating this project.
+templ-ui is a fork of [shadcn-templ](https://github.com/axadrn/shadcn-templ),
+which ports [shadcn/ui](https://ui.shadcn.com) to templ and hands you the
+sources to copy into your own repository. This fork keeps the components and
+changes the distribution: they stay in the module, and your project imports
+them. See [NOTICE](./NOTICE) for the attribution chain.
 
-![hero](assets/img/hero.png)
+## Install
+
+```bash
+go get github.com/kerkenes/templ-ui
+```
+
+## Use
+
+Import a component package and render it:
+
+```templ
+import "github.com/kerkenes/templ-ui/components/button"
+
+templ Page() {
+	@button.Button(button.Props{Variant: button.VariantOutline}) {
+		Click me
+	}
+}
+```
+
+Components need their stylesheet and their script bundle. Serve both from the
+handlers the module ships:
+
+```go
+mux.Handle("GET /assets/", assets.Handler())
+mux.Handle("GET /components/{bundle}", components.ScriptsHandler())
+```
+
+And reference them once, in your layout's `<head>`:
+
+```templ
+<link rel="stylesheet" href={ assets.StylesheetURL() }/>
+@components.Scripts()
+```
+
+The `style-<name>` class on `<body>` picks one of the eight styles
+(`style-vega` is the default one the components are drawn against).
+
+`assets.StylesheetURL()` serves a stylesheet compiled from the components
+alone. If your project already runs Tailwind, point it at
+`assets/css/globals.css` inside the module instead and let your own build
+scan both your templates and this module's components.
 
 ## Documentation
 
-Visit https://shadcn-templ.com/docs to view the documentation.
+The component reference lives on the docs site, which is built from this
+repository (`task dev`).
 
 ## Contributing
 
-Please read the [contributing guide](/CONTRIBUTING.md).
+Please read the [contributing guide](./CONTRIBUTING.md).
 
 ## License
 
-Licensed under the [MIT license](./LICENSE).
+MIT, see [LICENSE](./LICENSE).
