@@ -15,16 +15,26 @@ import (
 // The component JS bundle is the concatenation of every components/*/*.js
 // file. Each file is a standalone IIFE; the lexical walk order keeps
 // floatingui/floating_ui_core.js ahead of floating_ui_dom.js, the one pair
-// where load order matters. In production the bundle is built once from the
-// embedded files; in development it is rebuilt from disk on every request so
+// where load order matters. The bundle is built once from the embedded files;
+// only this repo's own dev server rebuilds it from disk on every request, so
 // edits hot-reload.
 
-// developmentComponentsDir is rewritten by the CLI when aliases.components
-// points somewhere other than the default components directory.
-const developmentComponentsDir = "components"
+const componentsDir = "components"
 
-func isDevelopment() bool {
-	return os.Getenv("GO_ENV") != "production"
+// diskFS is the working copy of the component sources, or nil. It is non-nil
+// only while developing this repo: the directory has to be there next to the
+// running process. A project importing the library has no such directory —
+// its bundle always comes from the embedded sources, which is why the check
+// is for the directory and not for GO_ENV alone. Missing that, every consumer
+// outside GO_ENV=production shipped an empty bundle and no error with it.
+func diskFS() fs.FS {
+	if os.Getenv("GO_ENV") == "production" {
+		return nil
+	}
+	if info, err := os.Stat(componentsDir); err != nil || !info.IsDir() {
+		return nil
+	}
+	return os.DirFS(componentsDir)
 }
 
 func buildBundle(fsys fs.FS) ([]byte, string) {
@@ -64,23 +74,26 @@ func gzipBundle(js []byte) []byte {
 	return buf.Bytes()
 }
 
-func bundle() ([]byte, []byte, string) {
-	if isDevelopment() {
-		js, hash := buildBundle(os.DirFS(developmentComponentsDir))
-		return js, nil, hash
+// bundle returns the JS, its gzip variant (nil when rebuilt from disk) and the
+// content hash. The last result reports whether the bundle came from disk, the
+// one case where it must not be cached.
+func bundle() ([]byte, []byte, string, bool) {
+	if fsys := diskFS(); fsys != nil {
+		js, hash := buildBundle(fsys)
+		return js, nil, hash, true
 	}
 	prodOnce.Do(func() {
 		prodJS, prodHash = buildBundle(TemplFiles)
 		prodGz = gzipBundle(prodJS)
 	})
-	return prodJS, prodGz, prodHash
+	return prodJS, prodGz, prodHash, false
 }
 
 // The content hash lives in the path like Next's static chunks
 // (/_next/static/chunks/<hash>.js): query strings are ignored by some CDN
 // caches, path hashes never are.
 func scriptsSrc() string {
-	_, _, hash := bundle()
+	_, _, hash, _ := bundle()
 	return "/components/shadcn-templ-" + hash + ".js"
 }
 
@@ -89,7 +102,7 @@ func scriptsSrc() string {
 // (shadcn-templ-<hash>.js) and the plain shadcn-templ.js alias, 404s anything else.
 func ScriptsHandler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		js, gz, hash := bundle()
+		js, gz, hash, fromDisk := bundle()
 		base := r.URL.Path[strings.LastIndex(r.URL.Path, "/")+1:]
 		if base != "shadcn-templ.js" && base != "shadcn-templ-"+hash+".js" {
 			http.NotFound(w, r)
@@ -98,7 +111,7 @@ func ScriptsHandler() http.Handler {
 		etag := `"` + hash + `"`
 		w.Header().Set("Content-Type", "application/javascript")
 		w.Header().Set("ETag", etag)
-		if isDevelopment() {
+		if fromDisk {
 			w.Header().Set("Cache-Control", "no-store")
 		} else {
 			w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
