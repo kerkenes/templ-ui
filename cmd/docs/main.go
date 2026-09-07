@@ -437,24 +437,10 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func SetupAssetsRoutes(mux *http.ServeMux) {
-	var isDevelopment = config.AppConfig.GoEnv != "production"
-
-	assetHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if isDevelopment {
-			w.Header().Set("Cache-Control", "no-store")
-		}
-
-		var fs http.Handler
-		if isDevelopment {
-			fs = http.FileServer(http.Dir("./assets"))
-		} else {
-			fs = http.FileServer(http.FS(assets.Assets))
-		}
-
-		fs.ServeHTTP(w, r)
-	})
-
-	mux.Handle("GET /assets/", http.StripPrefix("/assets/", assetHandler))
+	// The same handler the library ships to consumers: it serves this repo's
+	// assets directory from disk while developing and the embedded copies
+	// once GO_ENV is production.
+	mux.Handle("GET /assets/", assets.Handler())
 
 	// Component JS bundle
 	mux.Handle("GET /components/{bundle}", components.ScriptsHandler())

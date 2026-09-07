@@ -20,12 +20,12 @@ tasks:
   tailwind-clean:
     desc: Clean tailwind output
     cmds:
-      - "tailwindcss -i ./assets/css/globals.css -o ./assets/css/output.css --clean"
+      - "tailwindcss -i ./assets/css/docs.css -o ./assets/css/output.css --clean"
 
   tailwind-watch:
     desc: Run tailwindcss in watch mode
     cmds:
-      - "tailwindcss -i ./assets/css/globals.css -o ./assets/css/output.css --watch"
+      - "tailwindcss -i ./assets/css/docs.css -o ./assets/css/output.css --watch"
 
   kill-ports:
     desc: Kill leftover processes on the dev ports (8090 app, 7331 templ proxy, 3000 shiki)
@@ -41,6 +41,11 @@ tasks:
       - task --parallel tailwind-watch templ shiki-highlighter
 
   # Build & Validation
+  build-css:
+    desc: Compile assets/css/templ-ui.css, the stylesheet shipped to library consumers (scans components/ only, no docs sources)
+    cmds:
+      - npx @tailwindcss/cli --cwd components -i ../assets/css/globals.css -o ../assets/css/templ-ui.css --minify
+
   templ-generate:
     desc: Compile templ files into Go
     cmds:
