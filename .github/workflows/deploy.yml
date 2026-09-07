@@ -1,11 +1,11 @@
-# Off-host build for v1, the same pattern as the v2 branch: GitHub's
-# free ARM runners build the image, ghcr.io stores it, Dokploy only
-# pulls (Provider: Docker).
-name: deploy-v1
+# Off-host build: GitHub's free ARM runners build the image, ghcr.io
+# stores it, Coolify on the VPS only pulls. The server never compiles
+# again. Releases are tagged by hand, this workflow only follows main.
+name: deploy
 
 on:
   push:
-    branches: [v1]
+    branches: [main]
 
 permissions:
   contents: read
@@ -31,11 +31,12 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: |
-            ghcr.io/axadrn/shadcn-templ:v1
-            ghcr.io/axadrn/shadcn-templ:${{ github.sha }}
+            ghcr.io/kerkenes/templ-ui:latest
+            ghcr.io/kerkenes/templ-ui:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # The v1 app's deploy webhook (Deployments tab), its own secret.
-      - name: Trigger Dokploy deploy
-        run: curl -fsS -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL_V1 }}"
+      # Coolify pulls the fresh image; the URL is the resource's deploy
+      # webhook stored as a repo secret.
+      - name: Trigger Coolify deploy
+        run: curl -fsS -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}"
