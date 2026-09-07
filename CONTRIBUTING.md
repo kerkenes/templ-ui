@@ -37,21 +37,6 @@ See available tasks:
 task --list
 ```
 
-### Testing CLI changes against your fork
-
-Set `TEMPLUI_REPO` in your shell before running the CLI:
-
-```bash
-task install-templui
-
-# current shell session
-export TEMPLUI_REPO=your-github-user/templui
-templui add@your-branch button
-
-# one command
-TEMPLUI_REPO=your-github-user/templui templui add@your-branch button
-```
-
 ## Our Vision and Your Contributions
 
 templ-ui is an open-source project that aims to provide value to the Go community. We want to be transparent about our long-term vision:
