@@ -1,21 +1,8 @@
 ---
 title: "How To Use"
-description: "Learn how to install templUI and use its components."
+description: "Learn how to install templ-ui and use its components."
 order: 2
 ---
-
-## Quickstart
-
-Start fast with [`templui/templui-quickstart`](https://github.com/templui/templui-quickstart):
-
-```shell
-git clone https://github.com/templui/templui-quickstart.git myapp
-rm -rf myapp/.git
-cd myapp
-cp .env.example .env
-go mod tidy
-task dev
-```
 
 ## Tools
 
@@ -55,10 +42,10 @@ go install github.com/go-task/task/v3/cmd/task@latest
 
 Components are imported from the module. Nothing is copied into your repository, and `go get -u` is what updates them.
 
-### 1. Add templUI
+### 1. Add templ-ui
 
 ```shell
-go get github.com/templui/templui@latest
+go get github.com/kerkenes/templ-ui@latest
 ```
 
 You can also just import a component package and run `go mod tidy`.
@@ -209,10 +196,10 @@ tasks:
     desc: Watch Tailwind CSS changes
     cmds:
       - |
-        TEMPLUI_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/templui/templui)" && \
+        TEMPL_UI_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/kerkenes/templ-ui)" && \
         printf '%s\n' \
           '@source "./**/*.templ";' \
-          "@source \"$TEMPLUI_PATH/components/**/*.templ\";" \
+          "@source \"$TEMPL_UI_PATH/components/**/*.templ\";" \
           > ./assets/css/sources.generated.css && \
         tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
 
@@ -231,7 +218,7 @@ task dev
 ### 4. Import and use a component
 
 ```go
-import "github.com/templui/templui/components/button"
+import "github.com/kerkenes/templ-ui/components/button"
 ```
 
 ```templ
@@ -246,7 +233,7 @@ Interactive components load JavaScript explicitly in your layout.
 
 ```go
 import (
-  "github.com/templui/templui/components/datepicker"
+  "github.com/kerkenes/templ-ui/components/datepicker"
 )
 ```
 
@@ -275,7 +262,7 @@ func main() {
 
 ### 6. Serve Assets
 
-Use `setupAssetsRoutes(...)` to serve your app assets like Tailwind CSS output, fonts, images, and local files. In the import workflow, this is also where you mount templUI's embedded component scripts.
+Use `setupAssetsRoutes(...)` to serve your app assets like Tailwind CSS output, fonts, images, and local files. In the import workflow, this is also where you mount templ-ui's embedded component scripts.
 
 ```go
 func setupAssetsRoutes(mux *http.ServeMux) {
@@ -301,11 +288,9 @@ func setupAssetsRoutes(mux *http.ServeMux) {
 
   mux.Handle("GET /assets/", http.StripPrefix("/assets/", assetHandler))
 
-  // templUI embedded component scripts
+  // templ-ui embedded component scripts
   utils.SetupScriptRoutes(mux, isDevelopment)
 }
 ```
 
-Your Go app must serve `/assets/...` so the browser can load `assets/css/output.css`, fonts, images, and local files. For import-based apps, `utils.SetupScriptRoutes(...)` adds templUI's embedded component scripts.
-
-For a complete import-based app setup, see [`templui/templui-quickstart`](https://github.com/templui/templui-quickstart).
+Your Go app must serve `/assets/...` so the browser can load `assets/css/output.css`, fonts, images, and local files. For import-based apps, `utils.SetupScriptRoutes(...)` adds templ-ui's embedded component scripts.

@@ -104,11 +104,11 @@ func main() {
 templui is a collection of beautifully designed, accessible UI components built with templ and Go.
 Components are designed to be composable, customizable, and easy to integrate into your Go projects.
 
-- [Introduction](https://templui.io/docs/introduction): Core principles and getting started guide
-- [How to Use](https://templui.io/docs/how-to-use): CLI installation and usage guide
-- [Components](https://templui.io/docs/components): Component overview and catalog
-- [Themes](https://templui.io/docs/themes): Theme customization and styling
-- [GitHub](https://github.com/templui/templui): Source code and issue tracker
+- [Introduction](https://templ-ui.muratkirazkaya.com/docs/introduction): Core principles and getting started guide
+- [How to Use](https://templ-ui.muratkirazkaya.com/docs/how-to-use): CLI installation and usage guide
+- [Components](https://templ-ui.muratkirazkaya.com/docs/components): Component overview and catalog
+- [Themes](https://templ-ui.muratkirazkaya.com/docs/themes): Theme customization and styling
+- [GitHub](https://github.com/kerkenes/templ-ui): Source code and issue tracker
 
 `)
 
@@ -123,7 +123,7 @@ Components are designed to be composable, customizable, and easy to integrate in
 		output.WriteString(fmt.Sprintf("## %s\n\n", categoryName))
 
 		for _, comp := range components {
-			docURL := fmt.Sprintf("https://templui.io/docs/components/%s", comp.Slug)
+			docURL := fmt.Sprintf("https://templ-ui.muratkirazkaya.com/docs/components/%s", comp.Slug)
 			output.WriteString(fmt.Sprintf("- [%s](%s): %s\n", comp.DisplayName, docURL, comp.Description))
 		}
 		output.WriteString("\n")

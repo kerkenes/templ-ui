@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Ask a question or get help using templUI
+about: Ask a question or get help using templ-ui
 title: "[Question] "
 labels: question
 ---

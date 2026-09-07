@@ -10,8 +10,8 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	"context"
-	"github.com/templui/templui/components/dialog"
-	"github.com/templui/templui/utils"
+	"github.com/kerkenes/templ-ui/components/dialog"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type contextKey string

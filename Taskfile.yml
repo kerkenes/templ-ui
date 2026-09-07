@@ -98,7 +98,7 @@ tasks:
   generate-sitemap:
     desc: Generate sitemap.xml
     cmds:
-      - go run ./cmd/sitemap/main.go --baseurl="https://templui.io" --routes="./cmd/docs/main.go" --output="./static/sitemap.xml"
+      - go run ./cmd/sitemap/main.go --baseurl="https://templ-ui.muratkirazkaya.com" --routes="./cmd/docs/main.go" --output="./static/sitemap.xml"
 
   generate-icons:
     desc: Generate icon definitions

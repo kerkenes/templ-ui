@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug or unexpected behavior in templUI
+about: Report a bug or unexpected behavior in templ-ui
 title: "[Bug] "
 labels: bug
 ---
@@ -19,7 +19,7 @@ Steps to trigger the issue or paste minimal code.
 
 ## Environment
 
-- templUI version:
+- templ-ui version:
 - Go version:
 - Templ version:
 - Tailwind version:

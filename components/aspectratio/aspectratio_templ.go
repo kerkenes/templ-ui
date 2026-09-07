@@ -8,7 +8,7 @@ package aspectratio
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/templui/templui/utils"
+import "github.com/kerkenes/templ-ui/utils"
 
 type Ratio string
 

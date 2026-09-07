@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/a-h/templ"
-	"github.com/templui/templui/components"
+	"github.com/kerkenes/templ-ui/components"
 
 	twmerge "github.com/Oudwins/tailwind-merge-go"
 )
@@ -80,14 +80,14 @@ var ScriptURL = func(path string) string {
 
 // componentScriptBasePath is the base public path for component JavaScript
 // files, the prefix SetupScriptRoutes mounts and ComponentScript points at.
-const componentScriptBasePath = "/templui/js"
+const componentScriptBasePath = "/templ-ui/js"
 
 // UseUnminifiedScripts switches component script loading to the unminified files.
 // Leave this false in normal use and set it to true during app startup for debugging.
 var UseUnminifiedScripts = false
 
 // ComponentScript renders a deferred script tag for a component JavaScript file.
-// Example: ComponentScript("datepicker") → <script defer src="/templui/js/datepicker.min.js?..."></script>
+// Example: ComponentScript("datepicker") → <script defer src="/templ-ui/js/datepicker.min.js?..."></script>
 func ComponentScript(component string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, w io.Writer) error {
 		nonce := templ.GetNonce(ctx)
@@ -126,14 +126,14 @@ func ComponentScript(component string) templ.Component {
 }
 
 // SetupScriptRoutes serves the component JavaScript files embedded in the module.
-// Example: SetupScriptRoutes(mux, true) mounts /templui/js/*.js with no-store caching in development.
+// Example: SetupScriptRoutes(mux, true) mounts /templ-ui/js/*.js with no-store caching in development.
 func SetupScriptRoutes(mux *http.ServeMux, isDevelopment bool) {
 	if mux == nil {
 		return
 	}
 
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		urlPath := strings.TrimPrefix(r.URL.Path, "/templui/js/")
+		urlPath := strings.TrimPrefix(r.URL.Path, "/templ-ui/js/")
 		if urlPath == r.URL.Path || urlPath == "" || strings.Contains(urlPath, "..") {
 			http.NotFound(w, r)
 			return
@@ -157,5 +157,5 @@ func SetupScriptRoutes(mux *http.ServeMux, isDevelopment bool) {
 		_, _ = w.Write(file)
 	})
 
-	mux.Handle("GET /templui/js/", handler)
+	mux.Handle("GET /templ-ui/js/", handler)
 }

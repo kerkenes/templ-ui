@@ -9,8 +9,8 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/templui/templui/components/label"
-	"github.com/templui/templui/utils"
+	"github.com/kerkenes/templ-ui/components/label"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type MessageVariant string
