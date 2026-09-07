@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.14.1] - 2026-09-07
+
+### Added
+
+- **Segmented Process** component (`components/segmentedprocess`) — unstable,
+  API may still change. A multi-segment progress bar with per-segment
+  tooltips and threshold markers, built on the existing `tooltip` component.
+
 ## [v1.14.0] - 2026-09-07
 
 The first release of the fork. templ-ui continues the templUI v1 line, whose

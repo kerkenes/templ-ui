@@ -321,6 +321,16 @@
       "tags": ["select", "dropdown", "input", "form", "search"]
     },
     {
+      "name": "segmentedprocess",
+      "slug": "segmented-process",
+      "displayName": "Segmented Process",
+      "description": "Unstable: API may change. Multi-segment progress bar with per-segment tooltips and threshold markers.",
+      "files": ["components/segmentedprocess/segmentedprocess.templ"],
+      "dependencies": ["tooltip"],
+      "categories": ["feedback-status"],
+      "tags": ["segmented", "process", "progress", "usage", "threshold", "unstable"]
+    },
+    {
       "name": "separator",
       "slug": "separator",
       "displayName": "Separator",
