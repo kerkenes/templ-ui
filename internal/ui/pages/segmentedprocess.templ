@@ -1,0 +1,157 @@
+package pages
+
+import (
+	"github.com/kerkenes/templ-ui/internal/ui/layouts"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/ui/showcase"
+)
+
+templ SegmentedProcess() {
+	@layouts.DocsLayout(
+		"Segmented Process",
+		"A multi-segment progress bar for showing how a total breaks down into parts, with per-segment tooltips and optional threshold markers.",
+		[]modules.TableOfContentsItem{
+			{
+				ID:   "installation",
+				Text: "Installation",
+			},
+			{
+				Text: "Examples",
+				ID:   "examples",
+			},
+			{
+				ID:   "api",
+				Text: "API Reference",
+				Children: []modules.TableOfContentsItem{
+					{
+						ID:   "api-segmented-process",
+						Text: "SegmentedProcess",
+					},
+				},
+			},
+		},
+	) {
+		@modules.PageWrapper(modules.PageWrapperProps{
+			Name:        "Segmented Process",
+			Description: templ.Raw("A multi-segment progress bar for showing how a total breaks down into parts, with per-segment tooltips and optional threshold markers."),
+			Tailwind:    true,
+			Breadcrumbs: modules.Breadcrumbs{
+				Items: []modules.BreadcrumbItem{
+					{
+						Text: "Docs",
+						Path: "/docs",
+					},
+					{
+						Text: "Components",
+						Path: "/docs/components",
+					},
+					{
+						Text: "Segmented Process",
+					},
+				},
+			},
+		}) {
+			<div class="prose prose-sm mt-0 mb-4">
+				<p class="text-sm text-muted-foreground">
+					<strong>Unstable:</strong> this component's API may still change between releases. Depend on it, but expect to update call sites on upgrade.
+				</p>
+			</div>
+			@modules.ExampleWrapper(modules.ExampleWrapperProps{
+				ShowcaseFile:    showcase.SegmentedProcessDefault(),
+				PreviewCodeFile: "segmentedprocess_default.templ",
+			})
+			@modules.ContainerWrapper(modules.ContainerWrapperProps{
+				Title: "Installation",
+				ID:    "installation",
+			}) {
+				@modules.ComponentUsage(modules.ComponentUsageProps{
+					ComponentName: "segmentedprocess",
+				})
+			}
+			@modules.ContainerWrapper(modules.ContainerWrapperProps{
+				Title: "API Reference",
+				ID:    "api",
+			}) {
+				@modules.APILegend()
+				<div id="api-segmented-process" class="mb-8">
+					@modules.APITable(modules.APITableProps{
+						Title:       "SegmentedProcess",
+						Description: "Multi-segment progress bar with per-segment tooltips and threshold markers.",
+						Items: []modules.APITableItem{
+							{
+								Name:        "ID",
+								Type:        "string",
+								Default:     "",
+								Description: "Unique identifier for the root element.",
+								Required:    false,
+							},
+							{
+								Name:        "Class",
+								Type:        "string",
+								Default:     "",
+								Description: "Additional CSS classes to apply to the root element.",
+								Required:    false,
+							},
+							{
+								Name:        "Attributes",
+								Type:        "templ.Attributes",
+								Default:     "",
+								Description: "Additional HTML attributes to apply to the root element.",
+								Required:    false,
+							},
+							{
+								Name:        "Segments",
+								Type:        "[]Segment",
+								Default:     "",
+								Description: "Segments stacked left to right. Each has a Label and a Value; color cycles through the chart palette by position.",
+								Required:    true,
+							},
+							{
+								Name:        "Max",
+								Type:        "float64",
+								Default:     "0",
+								Description: "The domain the bar represents 100% of, unless DomainCompress overrides it.",
+								Required:    true,
+							},
+							{
+								Name:        "Thresholds",
+								Type:        "[]Threshold",
+								Default:     "",
+								Description: "Optional target markers drawn above the bar. Each has a Value, Label, and Variant ('default', 'success', 'danger', 'warning').",
+								Required:    false,
+							},
+							{
+								Name:        "DomainCompress",
+								Type:        "bool",
+								Default:     "false",
+								Description: "Scale the bar's visual domain to the last threshold (placed at 90% of the bar's width) instead of Max. Ignored without thresholds.",
+								Required:    false,
+							},
+							{
+								Name:        "Unit",
+								Type:        "string",
+								Default:     "",
+								Description: "Appended to displayed values, e.g. 'GB'.",
+								Required:    false,
+							},
+							{
+								Name:        "Height",
+								Type:        "int",
+								Default:     "12",
+								Description: "Bar height in pixels.",
+								Required:    false,
+							},
+							{
+								Name:        "AriaLabel",
+								Type:        "string",
+								Default:     "",
+								Description: "Overrides the generated \"X of Y unit used\" summary read by screen readers.",
+								Required:    false,
+							},
+						},
+					})
+				</div>
+			}
+		}
+	}
+}

@@ -1,0 +1,225 @@
+package segmentedprocess
+
+import (
+	"fmt"
+	"math"
+	"strconv"
+
+	"github.com/kerkenes/templ-ui/components/tooltip"
+	"github.com/kerkenes/templ-ui/utils"
+)
+
+// Segment is one part of the bar. Color always cycles through the chart
+// palette (--chart-1..5) by position — no per-segment color override, so
+// the bar stays inside the theme instead of taking arbitrary CSS colors.
+type Segment struct {
+	Label string
+	Value float64
+}
+
+// ThresholdVariant selects the marker/label color for a Threshold, mirroring
+// Progress's Variant enum instead of taking a raw CSS color.
+type ThresholdVariant string
+
+const (
+	ThresholdVariantDefault ThresholdVariant = "default"
+	ThresholdVariantSuccess ThresholdVariant = "success"
+	ThresholdVariantDanger  ThresholdVariant = "danger"
+	ThresholdVariantWarning ThresholdVariant = "warning"
+)
+
+// Threshold marks a target value on the bar with a labeled tick above it.
+type Threshold struct {
+	Value   float64
+	Label   string
+	Variant ThresholdVariant
+}
+
+type Props struct {
+	ID         string
+	Class      string
+	Attributes templ.Attributes
+
+	// Segments are stacked left to right in the order given.
+	Segments []Segment
+	// Max is the domain the bar represents 100% of, unless DomainCompress
+	// overrides it.
+	Max float64
+	// Thresholds are optional target markers drawn above the bar.
+	Thresholds []Threshold
+	// DomainCompress scales the bar's visual domain to the last threshold
+	// (placed at 90% of the bar's width) instead of Max, so a small
+	// threshold isn't squeezed into a sliver. Ignored without thresholds.
+	DomainCompress bool
+	// Unit is appended to displayed values, e.g. "GB".
+	Unit string
+	// Height in pixels. Defaults to 12.
+	Height int
+	// AriaLabel overrides the generated "X of Y unit used" summary.
+	AriaLabel string
+}
+
+var chartColors = []string{
+	"bg-chart-1", "bg-chart-2", "bg-chart-3", "bg-chart-4", "bg-chart-5",
+}
+
+templ SegmentedProcess(props ...Props) {
+	{{ var p Props }}
+	if len(props) > 0 {
+		{{ p = props[0] }}
+	}
+	if p.ID == "" {
+		{{ p.ID = utils.RandomID() }}
+	}
+	if p.Height <= 0 {
+		{{ p.Height = 12 }}
+	}
+	{{
+		used := usedValue(p.Segments)
+		domain := domainMax(p)
+		barPct := toPercent(used, domain)
+		isFull := barPct >= 99.95
+		unitSuffix := ""
+		if p.Unit != "" {
+			unitSuffix = " " + p.Unit
+		}
+		summary := p.AriaLabel
+		if summary == "" {
+			summary = fmt.Sprintf("%s of %s%s used", formatValue(used), formatValue(p.Max), unitSuffix)
+		}
+	}}
+	<div
+		id={ p.ID }
+		class={ utils.TwMerge("w-full", p.Class) }
+		{ p.Attributes... }
+	>
+		<div
+			class="group/row relative"
+			style={ fmt.Sprintf("height:%dpx", p.Height) }
+			role="group"
+			aria-label={ summary }
+		>
+			<div class="pointer-events-none absolute inset-0 rounded-full bg-secondary ring-1 ring-inset ring-border" aria-hidden="true"></div>
+			<div class="absolute inset-0 flex gap-0.5" style={ fmt.Sprintf("width:%s%%", formatValue(barPct)) }>
+				for i, s := range p.Segments {
+					{{
+						width := 0.0
+						if used > 0 {
+							width = s.Value / used * 100
+						}
+						pct := 0
+						if p.Max > 0 {
+							pct = int(math.Round(s.Value / p.Max * 100))
+						}
+						isFirst := i == 0
+						isLast := i == len(p.Segments)-1
+						colorClass := chartColors[i%len(chartColors)]
+					}}
+					@tooltip.Tooltip(tooltip.Props{ID: fmt.Sprintf("%s-tip-%d", p.ID, i)}) {
+						@tooltip.Trigger() {
+							<button
+								type="button"
+								class="group/seg relative h-full min-h-0 cursor-pointer touch-manipulation appearance-none border-0 bg-transparent p-0 outline-offset-1 transition-opacity focus-visible:outline-2 focus-visible:outline-ring group-has-[button:hover]/row:not-hover:opacity-55 group-has-[button:focus-visible]/row:not-focus-visible:opacity-55"
+								style={ fmt.Sprintf("width:%s%%", formatValue(width)) }
+								aria-label={ fmt.Sprintf("%s: %s%s (%d%%)", s.Label, formatValue(s.Value), unitSuffix, pct) }
+							>
+								<span
+									class={
+										utils.TwMerge(
+											"pointer-events-none absolute inset-0 transition-transform group-hover/seg:scale-y-[1.35] group-focus-visible/seg:scale-y-[1.35]",
+											colorClass,
+											utils.If(isFirst, "rounded-l-full"),
+											utils.If(isLast && isFull, "rounded-r-full"),
+										)
+									}
+								></span>
+							</button>
+						}
+						@tooltip.Content(tooltip.ContentProps{
+							Position:  tooltip.PositionTop,
+							ShowArrow: true,
+						}) {
+							<div class="flex items-start gap-1.5 whitespace-nowrap">
+								<i class={ utils.TwMerge("mt-1 size-1.5 shrink-0 rounded-sm", colorClass) }></i>
+								<span class="flex flex-col gap-px">
+									<b class="font-bold">{ s.Label }</b>
+									<span>{ formatValue(s.Value) }{ unitSuffix } · { strconv.Itoa(pct) }%</span>
+								</span>
+							</div>
+						}
+					}
+				}
+			</div>
+			for _, t := range p.Thresholds {
+				<span
+					class={ utils.TwMerge("pointer-events-none absolute top-[-6px] z-[1] h-0 w-0 -translate-x-1/2 border-x-4 border-x-transparent border-t-[5px]", thresholdBorderClass(t.Variant)) }
+					style={ fmt.Sprintf("left:%s%%", formatValue(toPercent(t.Value, domain))) }
+				></span>
+			}
+		</div>
+		if len(p.Thresholds) > 0 {
+			<div class="relative mt-1.5 h-3.5 text-xs text-muted-foreground">
+				for _, t := range p.Thresholds {
+					<span class="absolute top-px -translate-x-1/2 whitespace-nowrap" style={ fmt.Sprintf("left:%s%%", formatValue(toPercent(t.Value, domain))) }>{ t.Label }</span>
+				}
+			</div>
+		}
+	</div>
+}
+
+func usedValue(segments []Segment) float64 {
+	total := 0.0
+	for _, s := range segments {
+		total += s.Value
+	}
+	return total
+}
+
+func domainMax(p Props) float64 {
+	if p.DomainCompress && len(p.Thresholds) > 0 {
+		last := p.Thresholds[len(p.Thresholds)-1]
+		if last.Value > 0 {
+			return last.Value / 0.9
+		}
+	}
+	return p.Max
+}
+
+func toPercent(value, domain float64) float64 {
+	if domain <= 0 {
+		return 0
+	}
+	pct := value / domain * 100
+	if pct < 0 {
+		return 0
+	}
+	if pct > 100 {
+		return 100
+	}
+	return pct
+}
+
+func formatValue(v float64) string {
+	return strconv.FormatFloat(v, 'f', 1, 64)
+}
+
+func thresholdBorderClass(v ThresholdVariant) string {
+	switch v {
+	case ThresholdVariantSuccess:
+		return "border-t-green-500"
+	case ThresholdVariantDanger:
+		return "border-t-destructive"
+	case ThresholdVariantWarning:
+		return "border-t-yellow-500"
+	default:
+		return "border-t-foreground"
+	}
+}
+
+var scriptOnce = templ.NewOnceHandle()
+
+templ Script() {
+	@scriptOnce.Once() {
+		@tooltip.Script()
+	}
+}
