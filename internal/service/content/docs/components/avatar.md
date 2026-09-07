@@ -8,7 +8,7 @@ description: An image element with a fallback for representing the user.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/avatar"
+import "github.com/kerkenes/templ-ui/components/avatar"
 ```
 
 ```templ showLineNumbers

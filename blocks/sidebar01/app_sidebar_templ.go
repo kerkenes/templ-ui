@@ -8,7 +8,7 @@ package sidebar01
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/axadrn/shadcn-templ/v2/components/sidebar"
+import "github.com/kerkenes/templ-ui/components/sidebar"
 
 // This is sample data.
 type navItem struct {

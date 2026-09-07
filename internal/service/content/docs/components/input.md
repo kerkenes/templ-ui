@@ -8,7 +8,7 @@ description: Displays a form input field or a component that looks like an input
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/input"
+import "github.com/kerkenes/templ-ui/components/input"
 ```
 
 ```templ

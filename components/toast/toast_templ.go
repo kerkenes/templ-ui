@@ -11,7 +11,7 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"strconv"
 
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 // Type mirrors the toast types the built-in renderer recognizes.

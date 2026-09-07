@@ -8,7 +8,7 @@ description: Displays content within a desired ratio.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/aspectratio"
+import "github.com/kerkenes/templ-ui/components/aspectratio"
 ```
 
 ```templ showLineNumbers

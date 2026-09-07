@@ -8,7 +8,7 @@ description: Displays a menu to the user, such as a set of actions or functions,
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/dropdownmenu"
+import "github.com/kerkenes/templ-ui/components/dropdownmenu"
 ```
 
 ```templ showLineNumbers

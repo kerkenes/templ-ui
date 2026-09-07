@@ -104,7 +104,7 @@ Use `@version` to specify the version, e.g. `@latest`.
 
 ```json title="registry-item.json"
 {
-  "dependencies": ["github.com/axadrn/shadcn-templ/v2@latest"]
+  "dependencies": ["github.com/kerkenes/templ-ui@latest"]
 }
 ```
 

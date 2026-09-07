@@ -8,7 +8,7 @@ package dashboard01
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/axadrn/shadcn-templ/v2/components/sidebar"
+import "github.com/kerkenes/templ-ui/components/sidebar"
 
 func NavSecondary(items []NavItem, class string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {

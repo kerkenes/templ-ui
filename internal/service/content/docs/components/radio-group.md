@@ -9,8 +9,8 @@ description: A set of checkable buttons, known as radio buttons, where no more t
 
 ```go showLineNumbers
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/label"
-	"github.com/axadrn/shadcn-templ/v2/components/radio"
+	"github.com/kerkenes/templ-ui/components/label"
+	"github.com/kerkenes/templ-ui/components/radio"
 )
 ```
 

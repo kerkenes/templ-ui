@@ -8,7 +8,7 @@ description: Displays a list of options for the user to pick from, triggered by 
 ## Usage
 
 ```go showLineNumbers
-import selectcomp "github.com/axadrn/shadcn-templ/v2/components/select"
+import selectcomp "github.com/kerkenes/templ-ui/components/select"
 ```
 
 ```templ showLineNumbers

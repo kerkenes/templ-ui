@@ -12,7 +12,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type ctxKey string

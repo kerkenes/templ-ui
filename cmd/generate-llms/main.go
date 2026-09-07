@@ -111,7 +111,7 @@ func main() {
 - [CLI](https://shadcn-templ.com/docs/cli): Command-line tool for installing and managing components.
 - [Installation](https://shadcn-templ.com/docs/installation): Installation and setup guide.
 - [Components](https://shadcn-templ.com/docs/components): Component overview and catalog.
-- [GitHub](https://github.com/axadrn/shadcn-templ): Source code and issue tracker.
+- [GitHub](https://github.com/kerkenes/templ-ui): Source code and issue tracker.
 
 `)
 

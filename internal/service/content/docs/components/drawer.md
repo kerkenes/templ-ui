@@ -8,7 +8,7 @@ description: A panel that slides in from the edge of the screen and can be swipe
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/drawer"
+import "github.com/kerkenes/templ-ui/components/drawer"
 ```
 
 ```templ showLineNumbers

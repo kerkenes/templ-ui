@@ -12,10 +12,10 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/components/inputgroup"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/components/inputgroup"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type Side string

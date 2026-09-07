@@ -8,7 +8,7 @@ description: Autocomplete input with a list of suggestions.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/combobox"
+import "github.com/kerkenes/templ-ui/components/combobox"
 ```
 
 ```templ showLineNumbers

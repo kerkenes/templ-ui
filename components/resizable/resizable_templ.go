@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type Orientation string

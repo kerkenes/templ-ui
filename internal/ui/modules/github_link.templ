@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/internal/ctxkeys"
-	wrappedicon "github.com/axadrn/shadcn-templ/v2/internal/ui/icons"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/internal/ctxkeys"
+	wrappedicon "github.com/kerkenes/templ-ui/internal/ui/icons"
 )
 
 // formatStars is StarsCount in github-link.tsx with one deviation: the
@@ -35,7 +35,7 @@ templ GitHubLink() {
 		Size:    button.SizeSm,
 		Variant: button.VariantGhost,
 		Class:   "h-8 shadow-none",
-		Href:    "https://github.com/axadrn/shadcn-templ",
+		Href:    "https://github.com/kerkenes/templ-ui",
 		Target:  "_blank",
 		Attributes: templ.Attributes{
 			"rel": "noreferrer",

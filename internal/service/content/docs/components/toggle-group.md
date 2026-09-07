@@ -8,7 +8,7 @@ description: A set of two-state buttons that can be toggled on or off.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/togglegroup"
+import "github.com/kerkenes/templ-ui/components/togglegroup"
 ```
 
 ```templ showLineNumbers

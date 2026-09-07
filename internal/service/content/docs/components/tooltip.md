@@ -8,7 +8,7 @@ description: A popup that displays information related to an element when the el
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/tooltip"
+import "github.com/kerkenes/templ-ui/components/tooltip"
 ```
 
 ```templ showLineNumbers

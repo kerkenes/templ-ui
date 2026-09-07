@@ -8,7 +8,7 @@ description: Used to display textual user input from keyboard.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/kbd"
+import "github.com/kerkenes/templ-ui/components/kbd"
 ```
 
 ```templ showLineNumbers

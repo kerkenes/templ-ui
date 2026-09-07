@@ -8,7 +8,7 @@ description: A vertically stacked set of interactive headings that each reveal a
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/accordion"
+import "github.com/kerkenes/templ-ui/components/accordion"
 ```
 
 ```templ showLineNumbers

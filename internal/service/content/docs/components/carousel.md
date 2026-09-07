@@ -12,7 +12,7 @@ The carousel component is built using native templ and vanilla JavaScript, no ex
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/carousel"
+import "github.com/kerkenes/templ-ui/components/carousel"
 ```
 
 ```templ showLineNumbers

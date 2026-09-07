@@ -8,7 +8,7 @@ description: A control that allows the user to toggle between checked and not ch
 ## Usage
 
 ```go showLineNumbers
-import switchcomp "github.com/axadrn/shadcn-templ/v2/components/switch"
+import switchcomp "github.com/kerkenes/templ-ui/components/switch"
 ```
 
 ```templ showLineNumbers

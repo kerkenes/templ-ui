@@ -8,7 +8,7 @@ description: A modal dialog that interrupts the user with important content and 
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/alertdialog"
+import "github.com/kerkenes/templ-ui/components/alertdialog"
 ```
 
 ```templ showLineNumbers

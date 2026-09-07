@@ -9,10 +9,10 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/components/input"
-	"github.com/axadrn/shadcn-templ/v2/components/textarea"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/components/input"
+	"github.com/kerkenes/templ-ui/components/textarea"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type Props struct {

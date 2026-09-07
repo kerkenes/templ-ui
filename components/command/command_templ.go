@@ -11,10 +11,10 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"context"
 
-	"github.com/axadrn/shadcn-templ/v2/components/dialog"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/components/inputgroup"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/components/dialog"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/components/inputgroup"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type ctxKey string

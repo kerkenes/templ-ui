@@ -12,7 +12,7 @@ The `Resizable` component is a Templ pendant of [react-resizable-panels](https:/
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/resizable"
+import "github.com/kerkenes/templ-ui/components/resizable"
 ```
 
 ```templ showLineNumbers

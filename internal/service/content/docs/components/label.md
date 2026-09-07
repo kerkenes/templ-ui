@@ -8,7 +8,7 @@ description: Renders an accessible label associated with controls.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/label"
+import "github.com/kerkenes/templ-ui/components/label"
 ```
 
 ```templ showLineNumbers

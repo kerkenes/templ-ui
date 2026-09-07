@@ -8,7 +8,7 @@ description: A set of layered sections of content—known as tab panels—that a
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/tabs"
+import "github.com/kerkenes/templ-ui/components/tabs"
 ```
 
 ```templ showLineNumbers

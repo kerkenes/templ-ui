@@ -11,9 +11,9 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"strconv"
 
-	"github.com/axadrn/shadcn-templ/v2/components/collapsible"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/components/sidebar"
+	"github.com/kerkenes/templ-ui/components/collapsible"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/components/sidebar"
 )
 
 type Calendar struct {

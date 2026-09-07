@@ -8,7 +8,7 @@ description: A versatile component that you can use to display any content.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/item"
+import "github.com/kerkenes/templ-ui/components/item"
 ```
 
 ```templ showLineNumbers

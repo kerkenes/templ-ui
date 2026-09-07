@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/config"
-	"github.com/axadrn/shadcn-templ/v2/internal/ctxkeys"
+	"github.com/kerkenes/templ-ui/internal/config"
+	"github.com/kerkenes/templ-ui/internal/ctxkeys"
 )
 
 func TestBlocksPageExplainsItsBaseUIRegistryReference(t *testing.T) {

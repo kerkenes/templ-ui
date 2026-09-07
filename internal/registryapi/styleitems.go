@@ -12,13 +12,13 @@ import (
 	"strings"
 	"sync"
 
-	shadcntempl "github.com/axadrn/shadcn-templ/v2"
-	"github.com/axadrn/shadcn-templ/v2/assets"
-	"github.com/axadrn/shadcn-templ/v2/blocks"
-	"github.com/axadrn/shadcn-templ/v2/components"
-	"github.com/axadrn/shadcn-templ/v2/internal/inliner"
-	"github.com/axadrn/shadcn-templ/v2/internal/registry"
-	"github.com/axadrn/shadcn-templ/v2/internal/shared"
+	shadcntempl "github.com/kerkenes/templ-ui"
+	"github.com/kerkenes/templ-ui/assets"
+	"github.com/kerkenes/templ-ui/blocks"
+	"github.com/kerkenes/templ-ui/components"
+	"github.com/kerkenes/templ-ui/internal/inliner"
+	"github.com/kerkenes/templ-ui/internal/registry"
+	"github.com/kerkenes/templ-ui/internal/shared"
 )
 
 // isDevelopment mirrors components/scripts.go: outside production every

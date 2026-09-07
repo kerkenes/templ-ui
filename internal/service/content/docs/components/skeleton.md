@@ -8,7 +8,7 @@ description: Use to show a placeholder while content is loading.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/skeleton"
+import "github.com/kerkenes/templ-ui/components/skeleton"
 ```
 
 ```templ showLineNumbers

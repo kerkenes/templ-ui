@@ -8,7 +8,7 @@ description: A container that groups related buttons together with consistent st
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/buttongroup"
+import "github.com/kerkenes/templ-ui/components/buttongroup"
 ```
 
 ```templ

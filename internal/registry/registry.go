@@ -10,7 +10,7 @@ import (
 	"log"
 	"slices"
 
-	shadcntempl "github.com/axadrn/shadcn-templ/v2"
+	shadcntempl "github.com/kerkenes/templ-ui"
 )
 
 // File is one files[] entry of a registry item. Target is the explicit

@@ -10,7 +10,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/inliner"
+	"github.com/kerkenes/templ-ui/internal/inliner"
 )
 
 // writeJSON serializes like NextResponse.json: no HTML escaping, no

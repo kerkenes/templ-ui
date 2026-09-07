@@ -14,7 +14,7 @@ package example
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/axadrn/shadcn-templ/v2/utils"
+import "github.com/kerkenes/templ-ui/utils"
 
 type WrapperProps struct {
 	ID         string

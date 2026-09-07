@@ -9,9 +9,9 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/badge"
-	"github.com/axadrn/shadcn-templ/v2/components/card"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
+	"github.com/kerkenes/templ-ui/components/badge"
+	"github.com/kerkenes/templ-ui/components/card"
+	"github.com/kerkenes/templ-ui/components/icon"
 )
 
 func SectionCards() templ.Component {

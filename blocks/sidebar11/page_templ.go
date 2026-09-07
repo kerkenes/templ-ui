@@ -9,9 +9,9 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/breadcrumb"
-	"github.com/axadrn/shadcn-templ/v2/components/separator"
-	"github.com/axadrn/shadcn-templ/v2/components/sidebar"
+	"github.com/kerkenes/templ-ui/components/breadcrumb"
+	"github.com/kerkenes/templ-ui/components/separator"
+	"github.com/kerkenes/templ-ui/components/sidebar"
 )
 
 func Page() templ.Component {

@@ -3,7 +3,7 @@ title: "Import Workflow"
 description: "Use shadcn-templ as a plain Go module dependency."
 ---
 
-> **⚠️ Experimental:** This workflow may not survive to 2.0 stable. The supported path is the [CLI](/docs/installation), which copies component source into your app so you own and edit it, exactly like shadcn. The import workflow instead consumes shadcn-templ like any Go library: no copied files, updates via `go get`, customization by wrapping components rather than editing them. If you rely on it, [say so](https://github.com/axadrn/shadcn-templ/discussions). Real-world usage decides whether it ships in stable.
+> **⚠️ Experimental:** This workflow may not survive to 2.0 stable. The supported path is the [CLI](/docs/installation), which copies component source into your app so you own and edit it, exactly like shadcn. The import workflow instead consumes shadcn-templ like any Go library: no copied files, updates via `go get`, customization by wrapping components rather than editing them. If you rely on it, [say so](https://github.com/kerkenes/templ-ui/discussions). Real-world usage decides whether it ships in stable.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ The same tools as the CLI workflow: see [Installation → Configure templ, Tailw
 ### 1. Add shadcn-templ
 
 ```shell
-go get github.com/axadrn/shadcn-templ/v2@latest
+go get github.com/kerkenes/templ-ui@latest
 ```
 
 You can also just import a component package and run `go mod tidy`.
@@ -24,7 +24,7 @@ You can also just import a component package and run `go mod tidy`.
 Style setup is the same `shadcn-templ init` as in the [CLI workflow](/docs/installation#run-the-cli): it creates `assets/css/globals.css` and merges your theme variables and base layer into it. Pick a design on [shadcn-templ.com/create](https://shadcn-templ.com/create) and pass its preset code, or use one of the named presets:
 
 ```shell
-go install github.com/axadrn/shadcn-templ/v2/cmd/shadcn-templ@latest
+go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
 shadcn-templ init
 ```
 
@@ -54,7 +54,7 @@ tasks:
     desc: Watch Tailwind CSS changes
     cmds:
       - |
-        SHADCN_TEMPL_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/axadrn/shadcn-templ/v2)" && \
+        SHADCN_TEMPL_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/kerkenes/templ-ui)" && \
         printf '%s\n' \
           "@import \"$SHADCN_TEMPL_PATH/assets/css/tw-animate.css\";" \
           "@import \"$SHADCN_TEMPL_PATH/assets/css/shadcn-tailwind.css\";" \
@@ -87,7 +87,7 @@ Components carry `cn-*` classes; the style class on `<body>` picks which of the 
 ### 5. Import and use a component
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/button"
+import "github.com/kerkenes/templ-ui/components/button"
 ```
 
 ```templ

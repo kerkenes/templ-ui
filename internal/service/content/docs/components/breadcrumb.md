@@ -8,7 +8,7 @@ description: Displays the path to the current resource using a hierarchy of link
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/breadcrumb"
+import "github.com/kerkenes/templ-ui/components/breadcrumb"
 ```
 
 ```templ showLineNumbers

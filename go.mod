@@ -1,4 +1,4 @@
-module github.com/axadrn/shadcn-templ/v2
+module github.com/kerkenes/templ-ui
 
 go 1.25.0
 

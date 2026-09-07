@@ -16,7 +16,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/preset"
+	"github.com/kerkenes/templ-ui/internal/preset"
 )
 
 const DefaultRadiusValue = "0.625rem"

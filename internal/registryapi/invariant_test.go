@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/inliner"
-	"github.com/axadrn/shadcn-templ/v2/internal/registry"
+	"github.com/kerkenes/templ-ui/internal/inliner"
+	"github.com/kerkenes/templ-ui/internal/registry"
 )
 
 func TestEveryRegistryItemCompilesWithoutMarkersForEveryStyleAndOption(t *testing.T) {

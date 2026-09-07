@@ -8,7 +8,7 @@ description: An interactive component which expands/collapses a panel.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/collapsible"
+import "github.com/kerkenes/templ-ui/components/collapsible"
 ```
 
 ```templ showLineNumbers

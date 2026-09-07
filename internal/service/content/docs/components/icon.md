@@ -8,7 +8,7 @@ description: A wrapper for Lucide Icons that is primarily styled with Tailwind u
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/icon"
+import "github.com/kerkenes/templ-ui/components/icon"
 ```
 
 ```templ

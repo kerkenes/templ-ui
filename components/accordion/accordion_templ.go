@@ -12,8 +12,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 type Props struct {

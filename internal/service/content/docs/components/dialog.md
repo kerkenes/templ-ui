@@ -8,7 +8,7 @@ description: A window overlaid on either the primary window or another dialog wi
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/dialog"
+import "github.com/kerkenes/templ-ui/components/dialog"
 ```
 
 ```templ showLineNumbers

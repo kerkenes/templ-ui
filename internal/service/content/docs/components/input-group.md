@@ -8,7 +8,7 @@ description: Display additional information or actions to an input or textarea.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/inputgroup"
+import "github.com/kerkenes/templ-ui/components/inputgroup"
 ```
 
 ```templ showLineNumbers

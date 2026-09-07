@@ -8,7 +8,7 @@ description: A two-state button that can be either on or off.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/toggle"
+import "github.com/kerkenes/templ-ui/components/toggle"
 ```
 
 ```templ showLineNumbers

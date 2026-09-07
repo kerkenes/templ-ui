@@ -19,7 +19,7 @@ import (
 	"golang.org/x/image/draw"
 	"golang.org/x/image/font"
 
-	"github.com/axadrn/shadcn-templ/v2/assets"
+	"github.com/kerkenes/templ-ui/assets"
 )
 
 const (

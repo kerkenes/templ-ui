@@ -8,7 +8,7 @@ description: A responsive table component.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/table"
+import "github.com/kerkenes/templ-ui/components/table"
 ```
 
 ```templ showLineNumbers

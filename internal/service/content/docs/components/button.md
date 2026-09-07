@@ -8,7 +8,7 @@ description: Displays a button or a component that looks like a button.
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/button"
+import "github.com/kerkenes/templ-ui/components/button"
 ```
 
 ```templ

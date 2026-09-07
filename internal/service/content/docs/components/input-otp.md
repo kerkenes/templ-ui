@@ -12,7 +12,7 @@ The `InputOTP` component is a native templ and vanilla JavaScript implementation
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/inputotp"
+import "github.com/kerkenes/templ-ui/components/inputotp"
 ```
 
 ```templ showLineNumbers

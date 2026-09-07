@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/registry"
+	"github.com/kerkenes/templ-ui/internal/registry"
 )
 
 func TestRegistryClassLiteralsAreSelfContained(t *testing.T) {

@@ -8,7 +8,7 @@ description: A control that allows the user to toggle between checked and not ch
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/checkbox"
+import "github.com/kerkenes/templ-ui/components/checkbox"
 ```
 
 ```templ

@@ -12,7 +12,7 @@ The `Command` component is a native templ and vanilla JavaScript port of the [`c
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/command"
+import "github.com/kerkenes/templ-ui/components/command"
 ```
 
 ```templ showLineNumbers

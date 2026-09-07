@@ -9,9 +9,9 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/components/field"
-	"github.com/axadrn/shadcn-templ/v2/components/input"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/components/field"
+	"github.com/kerkenes/templ-ui/components/input"
 )
 
 func LoginForm() templ.Component {

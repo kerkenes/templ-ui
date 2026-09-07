@@ -8,7 +8,7 @@ description: Displays rich content in a portal, triggered by a button.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/popover"
+import "github.com/kerkenes/templ-ui/components/popover"
 ```
 
 ```templ showLineNumbers

@@ -8,7 +8,7 @@ description: An indicator that can be used to show a loading state.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/spinner"
+import "github.com/kerkenes/templ-ui/components/spinner"
 ```
 
 ```templ showLineNumbers

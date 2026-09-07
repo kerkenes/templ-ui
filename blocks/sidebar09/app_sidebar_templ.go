@@ -9,11 +9,11 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/components/label"
-	"github.com/axadrn/shadcn-templ/v2/components/sidebar"
-	switchcomp "github.com/axadrn/shadcn-templ/v2/components/switch"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/components/label"
+	"github.com/kerkenes/templ-ui/components/sidebar"
+	switchcomp "github.com/kerkenes/templ-ui/components/switch"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 // This is sample data

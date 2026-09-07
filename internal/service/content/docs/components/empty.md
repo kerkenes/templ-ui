@@ -8,7 +8,7 @@ description: Use the Empty component to display a empty state.
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/empty"
+import "github.com/kerkenes/templ-ui/components/empty"
 ```
 
 ```templ

@@ -8,7 +8,7 @@ description: Displays a badge or a component that looks like a badge.
 ## Usage
 
 ```go
-import "github.com/axadrn/shadcn-templ/v2/components/badge"
+import "github.com/kerkenes/templ-ui/components/badge"
 ```
 
 ```templ

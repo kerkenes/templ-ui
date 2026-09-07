@@ -14,4 +14,4 @@ Add it to your project with the CLI:
 templui add hover-card
 ```
 
-Released in [v1.12.0](https://github.com/axadrn/shadcn-templ/releases/tag/v1.12.0).
+Released in [v1.12.0](https://github.com/kerkenes/templ-ui/releases/tag/v1.12.0).

@@ -11,8 +11,8 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"time"
 
-	"github.com/axadrn/shadcn-templ/v2/components/calendar"
-	"github.com/axadrn/shadcn-templ/v2/components/sidebar"
+	"github.com/kerkenes/templ-ui/components/calendar"
+	"github.com/kerkenes/templ-ui/components/sidebar"
 )
 
 func DatePicker() templ.Component {

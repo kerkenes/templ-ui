@@ -6,8 +6,8 @@ import (
 	"sync"
 
 	"github.com/a-h/templ"
-	"github.com/axadrn/shadcn-templ/v2/assets"
-	"github.com/axadrn/shadcn-templ/v2/internal/inliner"
+	"github.com/kerkenes/templ-ui/assets"
+	"github.com/kerkenes/templ-ui/internal/inliner"
 )
 
 // Rendering a component tree as the compiled utility build of a style, the

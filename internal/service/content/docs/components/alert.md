@@ -8,7 +8,7 @@ description: Displays a callout for user attention.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/alert"
+import "github.com/kerkenes/templ-ui/components/alert"
 ```
 
 ```templ showLineNumbers

@@ -9,7 +9,7 @@ import (
 
 	"github.com/a-h/templ"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/extension"

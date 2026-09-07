@@ -8,7 +8,7 @@ description: Displays a form textarea or a component that looks like a textarea.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/textarea"
+import "github.com/kerkenes/templ-ui/components/textarea"
 ```
 
 ```templ showLineNumbers

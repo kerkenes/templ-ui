@@ -44,7 +44,7 @@ Open [shadcn-templ/create](/create) and build your preset visually. Choose your 
 Click `Get Code`, choose your project tab, and copy the generated command. Install the CLI first if you do not have it yet:
 
 ```shell
-go install github.com/axadrn/shadcn-templ/v2/cmd/shadcn-templ@latest
+go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
 ```
 
 The generated command will look similar to this:
@@ -112,7 +112,7 @@ After adding components, run `templ generate` and `go mod tidy`.
 Run the `init` command to scaffold a new templ project. Configure your project with flags: preset, base color, and more:
 
 ```shell
-go install github.com/axadrn/shadcn-templ/v2/cmd/shadcn-templ@latest
+go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
 shadcn-templ init -t templ
 ```
 
@@ -202,7 +202,7 @@ Import aliases need no configuration: Go resolves imports through the `module` p
 Run the `shadcn-templ` init command to set up shadcn-templ in your project:
 
 ```shell
-go install github.com/axadrn/shadcn-templ/v2/cmd/shadcn-templ@latest
+go install github.com/kerkenes/templ-ui/cmd/shadcn-templ@latest
 shadcn-templ init
 ```
 

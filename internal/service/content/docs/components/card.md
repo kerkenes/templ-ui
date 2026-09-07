@@ -8,7 +8,7 @@ description: Displays a card with header, content, and footer.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/card"
+import "github.com/kerkenes/templ-ui/components/card"
 ```
 
 ```templ showLineNumbers

@@ -8,7 +8,7 @@ description: Displays a menu located at the pointer, triggered by a right click 
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/contextmenu"
+import "github.com/kerkenes/templ-ui/components/contextmenu"
 ```
 
 ```templ showLineNumbers

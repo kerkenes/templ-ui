@@ -8,7 +8,7 @@ description: Combine labels, controls, and help text to compose accessible form 
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/field"
+import "github.com/kerkenes/templ-ui/components/field"
 ```
 
 ```templ showLineNumbers

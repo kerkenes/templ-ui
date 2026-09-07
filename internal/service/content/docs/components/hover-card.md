@@ -8,7 +8,7 @@ description: For sighted users to preview content available behind a link.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/hovercard"
+import "github.com/kerkenes/templ-ui/components/hovercard"
 ```
 
 ```templ showLineNumbers

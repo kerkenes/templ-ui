@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/axadrn/shadcn-templ/v2/assets"
+	"github.com/kerkenes/templ-ui/assets"
 )
 
 // Theme is the pendant of a registry/themes.ts entry. The values are the

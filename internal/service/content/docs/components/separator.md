@@ -8,7 +8,7 @@ description: Visually or semantically separates content.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/separator"
+import "github.com/kerkenes/templ-ui/components/separator"
 ```
 
 ```templ showLineNumbers

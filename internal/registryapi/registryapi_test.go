@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/axadrn/shadcn-templ/v2/internal/inliner"
-	"github.com/axadrn/shadcn-templ/v2/internal/shared"
+	"github.com/kerkenes/templ-ui/internal/inliner"
+	"github.com/kerkenes/templ-ui/internal/shared"
 )
 
 func TestVarsOrder(t *testing.T) {

@@ -8,7 +8,7 @@ description: An input where the user selects a value from within a given range.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/slider"
+import "github.com/kerkenes/templ-ui/components/slider"
 ```
 
 ```templ showLineNumbers

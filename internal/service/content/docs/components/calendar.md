@@ -11,7 +11,7 @@ description: A calendar component that allows users to select a date or a range 
 import (
 	"time"
 
-	"github.com/axadrn/shadcn-templ/v2/components/calendar"
+	"github.com/kerkenes/templ-ui/components/calendar"
 )
 ```
 

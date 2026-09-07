@@ -14,7 +14,7 @@ Customizable.
 ## Usage
 
 ```templ showLineNumbers title="layout.templ"
-import "github.com/axadrn/shadcn-templ/v2/components/sidebar"
+import "github.com/kerkenes/templ-ui/components/sidebar"
 
 templ Layout() {
 	@sidebar.Provider() {

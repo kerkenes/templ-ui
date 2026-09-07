@@ -8,7 +8,7 @@ description: A succinct message that is displayed temporarily.
 Add the `Toaster` component to your base layout.
 
 ```templ showLineNumbers title="layout.templ"
-import "github.com/axadrn/shadcn-templ/v2/components/toast"
+import "github.com/kerkenes/templ-ui/components/toast"
 
 templ Layout() {
 	<html lang="en">

@@ -8,7 +8,7 @@ description: Pagination with page navigation, next and previous links.
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/pagination"
+import "github.com/kerkenes/templ-ui/components/pagination"
 ```
 
 ```templ showLineNumbers

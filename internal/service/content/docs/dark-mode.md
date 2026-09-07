@@ -56,8 +56,8 @@ The preference is stored in `localStorage` under the `theme` key as `light`, `da
 package themeswitcher
 
 import (
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/components/icon"
 )
 
 templ ThemeSwitcher() {

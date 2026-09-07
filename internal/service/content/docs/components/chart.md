@@ -18,7 +18,7 @@ We use a small client runtime under the hood that draws Recharts compatible SVG 
 We designed the chart component with composition in mind. **You build your charts using chart components and only bring in custom components, such as the tooltip, when and where you need it**.
 
 ```templ showLineNumbers /chart.Container/ /chart.Tooltip/
-import "github.com/axadrn/shadcn-templ/v2/components/chart"
+import "github.com/kerkenes/templ-ui/components/chart"
 
 templ MyChart() {
 	@chart.Container(chart.ContainerProps{Config: chartConfig}) {
@@ -232,7 +232,7 @@ It is intentionally decoupled from chart data.
 This allows you to share config and color tokens between charts. It can also work independently for cases where your data or color tokens live remotely or in a different format.
 
 ```go showLineNumbers /chart.Config/
-import "github.com/axadrn/shadcn-templ/v2/components/icon"
+import "github.com/kerkenes/templ-ui/components/icon"
 
 var chartConfig = chart.Config{
 	{

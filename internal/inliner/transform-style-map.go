@@ -14,7 +14,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 // allowlist mirrors ALLOWLIST: classes that are never inlined or removed here

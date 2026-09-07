@@ -8,7 +8,7 @@ description: Extends the Dialog component to display content that complements th
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/sheet"
+import "github.com/kerkenes/templ-ui/components/sheet"
 ```
 
 ```templ showLineNumbers

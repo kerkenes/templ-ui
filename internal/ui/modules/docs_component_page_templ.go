@@ -13,15 +13,15 @@ import (
 	"net/url"
 	"strings"
 
-	componentsrc "github.com/axadrn/shadcn-templ/v2/components"
-	"github.com/axadrn/shadcn-templ/v2/components/button"
-	"github.com/axadrn/shadcn-templ/v2/components/dropdownmenu"
-	"github.com/axadrn/shadcn-templ/v2/components/icon"
-	"github.com/axadrn/shadcn-templ/v2/internal/ctxkeys"
-	"github.com/axadrn/shadcn-templ/v2/internal/registry"
-	"github.com/axadrn/shadcn-templ/v2/internal/shared"
-	"github.com/axadrn/shadcn-templ/v2/internal/ui/examples"
-	"github.com/axadrn/shadcn-templ/v2/utils"
+	componentsrc "github.com/kerkenes/templ-ui/components"
+	"github.com/kerkenes/templ-ui/components/button"
+	"github.com/kerkenes/templ-ui/components/dropdownmenu"
+	"github.com/kerkenes/templ-ui/components/icon"
+	"github.com/kerkenes/templ-ui/internal/ctxkeys"
+	"github.com/kerkenes/templ-ui/internal/registry"
+	"github.com/kerkenes/templ-ui/internal/shared"
+	"github.com/kerkenes/templ-ui/internal/ui/examples"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 // Modules for the markdown-based component docs (the shadcn docs shell):

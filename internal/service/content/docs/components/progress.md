@@ -8,7 +8,7 @@ description: Displays an indicator showing the completion progress of a task, ty
 ## Usage
 
 ```go showLineNumbers
-import "github.com/axadrn/shadcn-templ/v2/components/progress"
+import "github.com/kerkenes/templ-ui/components/progress"
 ```
 
 ```templ showLineNumbers
