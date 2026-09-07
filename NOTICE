@@ -1,0 +1,8 @@
+templ-ui
+
+This project is a fork of templUI (https://github.com/templui/templui),
+copyright (c) 2023 Axel Adrian, MIT licensed. The fork continues the v1 line,
+which templUI left behind when v2 moved to copying component sources into your
+repository with a CLI. templ-ui keeps the components a Go module you import.
+
+templUI is not affiliated with this fork.

@@ -1,20 +1,20 @@
 package pages
 
 import (
-	"github.com/templui/templui/internal/shared"
-	"github.com/templui/templui/internal/ui/layouts"
-	"github.com/templui/templui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/shared"
+	"github.com/kerkenes/templ-ui/internal/ui/layouts"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
 )
 
 templ ComponentsOverview() {
 	@layouts.DocsLayout(
 		"Components",
-		"Browse all available UI components in the templUI library. Beautiful, accessible components for Go templ.",
+		"Browse all available UI components in the templ-ui library. Beautiful, accessible components for Go templ.",
 		[]modules.TableOfContentsItem{},
 	) {
 		@modules.PageWrapper(modules.PageWrapperProps{
 			Name:        "Components",
-			Description: templ.Raw("Browse all available UI components in the templUI library. Beautiful, accessible components for Go templ."),
+			Description: templ.Raw("Browse all available UI components in the templ-ui library. Beautiful, accessible components for Go templ."),
 			Breadcrumbs: modules.Breadcrumbs{
 				Items: []modules.BreadcrumbItem{
 					{

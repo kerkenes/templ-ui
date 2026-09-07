@@ -1,319 +1,319 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://templui.io/llms.txt</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/llms.txt</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://templui.io/{$}</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/{$}</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/getting-started</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/getting-started</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/themes</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/themes</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/introduction</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/introduction</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/how-to-use</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/how-to-use</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/accordion</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/accordion</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/alert</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/alert</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/aspect-ratio</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/aspect-ratio</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/avatar</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/avatar</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/badge</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/badge</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/breadcrumb</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/breadcrumb</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/button</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/button</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/calendar</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/calendar</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/card</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/card</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/carousel</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/carousel</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/charts</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/charts</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/checkbox</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/checkbox</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/collapsible</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/collapsible</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/copy-button</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/copy-button</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/date-picker</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/date-picker</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/sheet</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/sheet</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/dropdown</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/dropdown</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/form</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/form</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/icon</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/icon</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/input</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/input</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/input-otp</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/input-otp</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/label</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/label</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/dialog</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/dialog</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/pagination</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/pagination</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/progress</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/progress</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/radio</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/radio</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/rating</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/rating</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/select-box</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/select-box</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/separator</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/separator</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/sidebar</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/sidebar</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/sidebar-fullscreen</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/sidebar-fullscreen</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/skeleton</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/skeleton</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/slider</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/slider</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/table</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/table</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/tabs</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/tabs</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/tags-input</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/tags-input</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/textarea</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/textarea</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/time-picker</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/time-picker</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/toast</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/toast</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/switch</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/switch</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/tooltip</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/tooltip</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/popover</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/popover</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/components/hover-card</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/components/hover-card</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/docs/test-form-items</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/docs/test-form-items</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://templui.io/components/js/</loc>
+    <loc>https://templ-ui.muratkirazkaya.com/components/js/</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

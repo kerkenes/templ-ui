@@ -2,10 +2,10 @@ package layouts
 
 import (
 	"fmt"
-	"github.com/templui/templui/internal/config"
-	"github.com/templui/templui/internal/ctxkeys"
-	"github.com/templui/templui/internal/ui/modules"
-	"github.com/templui/templui/utils"
+	"github.com/kerkenes/templ-ui/internal/config"
+	"github.com/kerkenes/templ-ui/internal/ctxkeys"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/utils"
 )
 
 templ BaseLayout(title, description string) {
@@ -46,7 +46,7 @@ templ BaseLayout(title, description string) {
 			<script defer nonce={ templ.GetNonce(ctx) } src={ utils.ScriptURL("/components/js/toast/toast.min.js") }></script>
 			// Plausible Analytics
 			if config.AppConfig.GoEnv == "production" {
-				<script defer data-domain="templui.io" src="https://plausible.axeladrian.com/js/script.js" nonce={ templ.GetNonce(ctx) }></script>
+				<script defer data-domain="templ-ui.muratkirazkaya.com" src="https://plausible.axeladrian.com/js/script.js" nonce={ templ.GetNonce(ctx) }></script>
 			}
 			// Shiki Highlighter Script
 			@modules.CodeHighlightingScript()

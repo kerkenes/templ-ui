@@ -10,15 +10,15 @@ import (
 
 	"github.com/a-h/templ"
 
-	"github.com/templui/templui/assets"
-	"github.com/templui/templui/components"
-	"github.com/templui/templui/components/toast"
-	"github.com/templui/templui/internal/config"
-	"github.com/templui/templui/internal/middleware"
-	"github.com/templui/templui/internal/service"
-	"github.com/templui/templui/internal/ui/modules"
-	"github.com/templui/templui/internal/ui/pages"
-	"github.com/templui/templui/static"
+	"github.com/kerkenes/templ-ui/assets"
+	"github.com/kerkenes/templ-ui/components"
+	"github.com/kerkenes/templ-ui/components/toast"
+	"github.com/kerkenes/templ-ui/internal/config"
+	"github.com/kerkenes/templ-ui/internal/middleware"
+	"github.com/kerkenes/templ-ui/internal/service"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/ui/pages"
+	"github.com/kerkenes/templ-ui/static"
 )
 
 func toastDemoHandler(w http.ResponseWriter, r *http.Request) {

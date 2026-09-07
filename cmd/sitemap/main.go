@@ -57,7 +57,7 @@ func findRoutes(routesFile string) ([]string, error) {
 
 func main() {
 	// Command line arguments
-	baseURL := flag.String("baseurl", "https://templui.io", "Base URL for the sitemap")
+	baseURL := flag.String("baseurl", "https://templ-ui.muratkirazkaya.com", "Base URL for the sitemap")
 	outputFile := flag.String("output", "static/sitemap.xml", "Path to output file")
 	routesFile := flag.String("routes", "cmd/docs/main.go", "Path to routes file")
 	flag.Parse()

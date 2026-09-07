@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/templui/templui/internal/markdown"
-	"github.com/templui/templui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/markdown"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
 )
 
 //go:embed content/docs

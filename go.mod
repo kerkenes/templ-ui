@@ -1,4 +1,4 @@
-module github.com/templui/templui
+module github.com/kerkenes/templ-ui
 
 go 1.24
 

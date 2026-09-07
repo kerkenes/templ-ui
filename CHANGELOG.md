@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.14.0] - 2026-09-07
+
+The first release of the fork. templ-ui continues the templUI v1 line, whose
+components are imported from a Go module; templUI itself moved on to v2, where
+a CLI copies component sources into your repository instead.
+
+Read this as a fork point rather than an upgrade. Everything you import,
+install and serve is renamed between 1.13 and 1.14, and the versions on either
+side of it are not comparable. Expect to redo your setup rather than to bump a
+dependency.
+
+### Changed
+
+- **The module path is `github.com/kerkenes/templ-ui`.** Every import changes.
+- **Component scripts are served from `/templ-ui/js`** rather than
+  `/templui/js`. `utils.SetupScriptRoutes` mounts the new prefix; nothing else
+  about the script workflow changes.
+- `TEMPLUI_PATH` in the documented Taskfile is now `TEMPL_UI_PATH`, and the
+  docs site lives at templ-ui.muratkirazkaya.com.
+
+### Removed
+
+- **The CLI.** There is no `templui init` / `add` / `upgrade` and no
+  `.templui.json`. Components are imported from the module and `go get -u`
+  updates them. The one thing the CLI could do that importing cannot is let you
+  edit a component's source in place; fork the module if you need that.
+- The CLI Workflow chapter of the documentation, and the links to the upstream
+  quickstart repository, which imports `templui/templui` and does not build
+  against this module.
+
 ## [v1.12.1] - 2026-06-28
 
 ### Fixed

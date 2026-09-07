@@ -9,8 +9,8 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/templui/templui/components/input"
-	"github.com/templui/templui/utils"
+	"github.com/kerkenes/templ-ui/components/input"
+	"github.com/kerkenes/templ-ui/utils"
 	"strconv"
 )
 

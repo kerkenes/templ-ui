@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/templui/templui/internal/config"
-	"github.com/templui/templui/internal/ctxkeys"
+	"github.com/kerkenes/templ-ui/internal/config"
+	"github.com/kerkenes/templ-ui/internal/ctxkeys"
 )
 
 func CacheControlMiddleware(next http.Handler) http.Handler {
