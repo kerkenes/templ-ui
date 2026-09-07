@@ -78,9 +78,9 @@ var ScriptURL = func(path string) string {
 	return path + "?v=" + ScriptVersion
 }
 
-// componentScriptBasePath is the base public path for component JavaScript files.
-// In the import workflow this stays "/templui/js". The CLI rewrites it to the user's local jsPublicPath.
-var componentScriptBasePath = "/templui/js"
+// componentScriptBasePath is the base public path for component JavaScript
+// files, the prefix SetupScriptRoutes mounts and ComponentScript points at.
+const componentScriptBasePath = "/templui/js"
 
 // UseUnminifiedScripts switches component script loading to the unminified files.
 // Leave this false in normal use and set it to true during app startup for debugging.
@@ -125,10 +125,10 @@ func ComponentScript(component string) templ.Component {
 	})
 }
 
-// SetupScriptRoutes serves embedded component JavaScript files for the import workflow.
+// SetupScriptRoutes serves the component JavaScript files embedded in the module.
 // Example: SetupScriptRoutes(mux, true) mounts /templui/js/*.js with no-store caching in development.
 func SetupScriptRoutes(mux *http.ServeMux, isDevelopment bool) {
-	if mux == nil || componentScriptBasePath != "/templui/js" {
+	if mux == nil {
 		return
 	}
 
