@@ -5,40 +5,6 @@ description: Displays a form textarea or a component that looks like a textarea.
 
 <ComponentPreview name="textarea-demo" previewClassName="*:max-w-xs" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add textarea
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="textarea" title="components/textarea/textarea.templ" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

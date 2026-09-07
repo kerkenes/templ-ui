@@ -5,38 +5,6 @@ description: Displays a card with header, content, and footer.
 
 <ComponentPreview name="card-demo" previewClassName="h-[30rem]" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add card
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="card" title="components/card/card.templ" />
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

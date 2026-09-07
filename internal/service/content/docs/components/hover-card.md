@@ -5,46 +5,6 @@ description: For sighted users to preview content available behind a link.
 
 <ComponentPreview name="hover-card-demo" previewClassName="h-80" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add hover-card
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="hover-card" title="components/hovercard/hovercard.templ" />
-
-<ComponentSource name="hover-card" title="components/hovercard/hovercard.js" />
-
-<ComponentSource name="hover-card" title="components/floatingui/floating_ui_core.js" />
-
-<ComponentSource name="hover-card" title="components/floatingui/floating_ui_dom.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

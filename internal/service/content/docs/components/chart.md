@@ -36,64 +36,6 @@ The runtime watches the DOM, so charts arriving through htmx or Datastar swaps r
 
 **The components are yours**.
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add chart
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="chart" title="components/chart/chart.templ" />
-
-<ComponentSource name="chart" title="components/chart/chart.js" />
-
-<Step>Add the following colors to your CSS file</Step>
-
-```css title="assets/css/globals.css" showLineNumbers
-@layer base {
-  :root {
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-  }
-
-  .dark {
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-  }
-}
-```
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Your First Chart
 
 Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.

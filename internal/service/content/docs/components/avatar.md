@@ -5,42 +5,6 @@ description: An image element with a fallback for representing the user.
 
 <ComponentPreview name="avatar-demo" previewClassName="h-72" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add avatar
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="avatar" title="components/avatar/avatar.templ" />
-
-<ComponentSource name="avatar" title="components/avatar/avatar.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

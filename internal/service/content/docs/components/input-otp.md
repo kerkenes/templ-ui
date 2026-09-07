@@ -9,42 +9,6 @@ description: Accessible one-time password component with copy paste functionalit
 
 The `InputOTP` component is a native templ and vanilla JavaScript implementation with no external dependencies.
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add input-otp
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="input-otp" title="components/inputotp/inputotp.templ" />
-
-<ComponentSource name="input-otp" title="components/inputotp/inputotp.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

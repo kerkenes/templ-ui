@@ -11,42 +11,6 @@ to any application and often contain a lot of moving parts.
 We now have a solid foundation to build on top of. Composable. Themeable.
 Customizable.
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add sidebar
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="sidebar" title="components/sidebar/sidebar.templ" />
-
-<ComponentSource name="sidebar" title="components/sidebar/sidebar.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```templ showLineNumbers title="layout.templ"

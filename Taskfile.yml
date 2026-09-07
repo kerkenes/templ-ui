@@ -66,13 +66,3 @@ tasks:
     desc: Generate assets/css/style-classes.txt (Tailwind scan candidates for the compiled docs previews) from the vendored style css
     cmds:
       - go run ./cmd/generate-style-classes
-
-  install-compinstall:
-    desc: Install compinstall tool
-    cmds:
-      - go install ./cmd/compinstall
-
-  install-shadcn-templ:
-    desc: Install shadcn-templ CLI from the current local checkout
-    cmds:
-      - go install ./cmd/shadcn-templ

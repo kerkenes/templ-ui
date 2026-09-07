@@ -5,11 +5,7 @@ description: A date picker component with range and presets.
 
 <ComponentPreview name="date-picker-demo" />
 
-## Installation
-
-The Date Picker is built using a composition of the `Popover` and the `Calendar` components.
-
-See installation instructions for the [Popover](/docs/components/popover#installation) and the [Calendar](/docs/components/calendar#installation) components.
+The Date Picker is built using a composition of the [Popover](/docs/components/popover) and the [Calendar](/docs/components/calendar) components.
 
 ## Usage
 

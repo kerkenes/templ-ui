@@ -11,7 +11,7 @@ import (
 // (and their raw markdown under /docs/<slug>.md). cmd/docs registers the
 // routes from this list and cmd/sitemap generates the sitemap from it.
 var DocSlugs = []string{
-	"introduction", "installation", "components-json", "package-imports", "theming", "typeset", "dark-mode", "cli", "import-workflow",
+	"introduction", "installation", "components-json", "package-imports", "theming", "typeset", "dark-mode", "import-workflow",
 	"utils/scroll-fade", "utils/shimmer",
 	"registry", "registry/getting-started", "registry/registry-json", "registry/registry-item-json",
 }
@@ -45,7 +45,6 @@ var TopLevelSections = []SideLink{
 	{Text: "Components", Href: "/docs/components"},
 	{Text: "Installation", Href: "/docs/installation"},
 	{Text: "Theming", Href: "/docs/theming"},
-	{Text: "CLI", Href: "/docs/cli"},
 	{Text: "Typeset", Href: "/docs/typeset"},
 	{Text: "Registry", Href: "/docs/registry"},
 	{Text: "Changelog", Href: "/docs/changelog"},
@@ -167,10 +166,6 @@ var Sections = []Section{
 			{
 				Text: "Dark Mode",
 				Href: "/docs/dark-mode",
-			},
-			{
-				Text: "CLI",
-				Href: "/docs/cli",
 			},
 			// Changelog before llms.txt, per shadcn's (root)/meta.json order.
 			{

@@ -37,7 +37,6 @@ registry.json
 | `components`                    | The components and their JavaScript.     |
 | `internal/ui`                   | The pages and modules for the website.   |
 | `internal/service/content/docs` | The markdown content for the docs.       |
-| `cmd/shadcn-templ`                   | The `shadcn-templ` CLI.                       |
 | `registry.json`                 | The registry for the components.         |
 
 ## Development
@@ -79,32 +78,6 @@ task dev
 ```
 
 This runs the `templ` watcher and the Tailwind CSS watcher in parallel and serves the website at `http://localhost:8090`.
-
-## Running the CLI Locally
-
-To run the CLI locally, you can follow the workflow:
-
-1. Start by running the dev server:
-
-   ```bash
-   task dev
-   ```
-
-2. In another terminal tab, install the CLI from your working tree:
-
-   ```bash
-   go install ./cmd/shadcn-templ
-   ```
-
-   To test the CLI against your local registry, use a command like:
-
-   ```bash
-   shadcn-templ <init | add | ...> --registry http://localhost:8090
-   ```
-
-   You can also set the registry via the `SHADCN_TEMPL_REGISTRY` environment variable.
-
-This workflow ensures that you are running the most recent version of the registry and testing the CLI properly in your local environment.
 
 ## Documentation
 
@@ -150,7 +123,7 @@ the following categories:
   issue if present)
 - `refactor`: any code related change that is not a fix nor a feature
 - `docs`: changing existing or creating new documentation (i.e. README, docs for
-  usage of a lib or cli usage)
+  usage of a lib)
 - `build`: all changes regarding the build of the software, changes to
   dependencies or the addition of new dependencies
 - `test`: all changes regarding tests (adding new tests or changing existing
@@ -169,12 +142,6 @@ https://www.conventionalcommits.org/ or check out the
 ## Requests for new components
 
 If you have a request for a new component, please open a discussion on GitHub. We'll be happy to help you out.
-
-## CLI
-
-The `shadcn-templ` package is a CLI for adding components to your project. You can find the documentation for the CLI [here](https://shadcn-templ.com/docs/cli).
-
-Any changes to the CLI should be made in the `cmd/shadcn-templ` directory. If you can, it would be great if you could add tests for your changes.
 
 ## Testing
 

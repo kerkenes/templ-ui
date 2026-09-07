@@ -5,46 +5,6 @@ description: Displays rich content in a portal, triggered by a button.
 
 <ComponentPreview name="popover-demo" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add popover
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="popover" title="components/popover/popover.templ" />
-
-<ComponentSource name="popover" title="components/popover/popover.js" />
-
-<ComponentSource name="popover" title="components/floatingui/floating_ui_core.js" />
-
-<ComponentSource name="popover" title="components/floatingui/floating_ui_dom.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers

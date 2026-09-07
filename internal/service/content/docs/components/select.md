@@ -5,46 +5,6 @@ description: Displays a list of options for the user to pick from, triggered by 
 
 <ComponentPreview name="select-demo" />
 
-## Installation
-
-<CodeTabs>
-
-<TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
-
-```bash
-shadcn-templ add select
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps className="mb-0 pt-2">
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="select" title="components/select/select.templ" />
-
-<ComponentSource name="select" title="components/select/select.js" />
-
-<ComponentSource name="select" title="components/floatingui/floating_ui_core.js" />
-
-<ComponentSource name="select" title="components/floatingui/floating_ui_dom.js" />
-
-Component scripts are loaded through the shared script bundle, see [JavaScript](/docs/installation#javascript).
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</CodeTabs>
-
 ## Usage
 
 ```go showLineNumbers
