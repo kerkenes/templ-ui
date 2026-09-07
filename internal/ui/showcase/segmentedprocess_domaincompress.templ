@@ -1,0 +1,39 @@
+package showcase
+
+import "github.com/kerkenes/templ-ui/components/segmentedprocess"
+
+// Without DomainCompress, this bar's Max (1000) would squeeze the
+// interesting range (0-111) into the first 11% of the width. With it,
+// the domain scales to the last threshold instead, so the segments and
+// threshold stay readable.
+templ SegmentedProcessDomainCompress() {
+	<div class="w-full max-w-md space-y-6">
+		<div>
+			<p class="mb-2 text-sm text-muted-foreground">DomainCompress: false</p>
+			@segmentedprocess.SegmentedProcess(segmentedprocess.Props{
+				Max: 1000,
+				Segments: []segmentedprocess.Segment{
+					{Label: "Used", Value: 82},
+					{Label: "Reserved", Value: 20},
+				},
+				Thresholds: []segmentedprocess.Threshold{
+					{Value: 100, Label: "100", Variant: segmentedprocess.ThresholdVariantWarning},
+				},
+			})
+		</div>
+		<div>
+			<p class="mb-2 text-sm text-muted-foreground">DomainCompress: true</p>
+			@segmentedprocess.SegmentedProcess(segmentedprocess.Props{
+				Max:            1000,
+				DomainCompress: true,
+				Segments: []segmentedprocess.Segment{
+					{Label: "Used", Value: 82},
+					{Label: "Reserved", Value: 20},
+				},
+				Thresholds: []segmentedprocess.Threshold{
+					{Value: 100, Label: "100", Variant: segmentedprocess.ThresholdVariantWarning},
+				},
+			})
+		</div>
+	</div>
+}

@@ -18,6 +18,20 @@ templ SegmentedProcess() {
 			{
 				Text: "Examples",
 				ID:   "examples",
+				Children: []modules.TableOfContentsItem{
+					{
+						Text: "Thresholds",
+						ID:   "thresholds",
+					},
+					{
+						Text: "Domain Compress",
+						ID:   "domain-compress",
+					},
+					{
+						Text: "Custom Height",
+						ID:   "custom-height",
+					},
+				},
 			},
 			{
 				ID:   "api",
@@ -66,6 +80,29 @@ templ SegmentedProcess() {
 			}) {
 				@modules.ComponentUsage(modules.ComponentUsageProps{
 					ComponentName: "segmentedprocess",
+				})
+			}
+			@modules.ContainerWrapper(modules.ContainerWrapperProps{
+				Title: "Examples",
+				ID:    "examples",
+			}) {
+				@modules.ExampleWrapper(modules.ExampleWrapperProps{
+					SectionName:     "Thresholds",
+					ShowcaseFile:    showcase.SegmentedProcessThresholds(),
+					PreviewCodeFile: "segmentedprocess_thresholds.templ",
+					ID:              "thresholds",
+				})
+				@modules.ExampleWrapper(modules.ExampleWrapperProps{
+					SectionName:     "Domain Compress",
+					ShowcaseFile:    showcase.SegmentedProcessDomainCompress(),
+					PreviewCodeFile: "segmentedprocess_domaincompress.templ",
+					ID:              "domain-compress",
+				})
+				@modules.ExampleWrapper(modules.ExampleWrapperProps{
+					SectionName:     "Custom Height",
+					ShowcaseFile:    showcase.SegmentedProcessHeight(),
+					PreviewCodeFile: "segmentedprocess_height.templ",
+					ID:              "custom-height",
 				})
 			}
 			@modules.ContainerWrapper(modules.ContainerWrapperProps{
