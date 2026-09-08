@@ -6,13 +6,13 @@ order: 1
 
 ## Introduction
 
-templ-ui is a growing collection of beautifully designed components built with templ and Tailwind CSS. Import component packages directly from `github.com/kerkenes/templ-ui` — everything is customizable, type-safe, and yours to own.
+templ-ui is a growing collection of beautifully designed components built with templ and Tailwind CSS. Import component packages directly from `github.com/kerkenes/templ-ui`. Everything is customizable, type-safe, and yours to own.
 
 `go get` the module, import the components you need. Follow our [releases](https://github.com/kerkenes/templ-ui/releases) to see what's new.
 
 ## Why templ-ui
 
-Design inspired by [shadcn/ui](https://ui.shadcn.com/) — accessible, unstyled-by-default components you can make your own — but distributed the way any other Go library is: `go get` it, import what you need. No copied source to maintain, no CLI to run.
+templ-ui exists because a component kit should be a library, not a starter template. We forked it off templUI's v1 line specifically to stay there: v2 moved to a CLI that copies component source into your repo, so you own and maintain it yourself, one diff at a time on every update. We wanted the opposite: `go get -u` and move on.
 
 Every component is designed to be beautiful by default, fully accessible, and CSP compliant. No magic, no hidden complexity – just clean, customizable code that works.
 
