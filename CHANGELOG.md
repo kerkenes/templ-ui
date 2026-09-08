@@ -11,9 +11,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Segmented Process** component (`components/segmentedprocess`) — unstable,
+- **Segmented Process** component (`components/segmentedprocess`), unstable,
   API may still change. A multi-segment progress bar with per-segment
   tooltips and threshold markers, built on the existing `tooltip` component.
+  Ships with an Examples section (Thresholds, Domain Compress, Custom Height).
+
+### Fixed
+
+- `github.com/Oudwins/tailwind-merge-go` bumped to v0.2.1. v0.2.0 panicked on
+  named group modifiers like `group-hover/seg:scale-y-[1.35]`, misreading the
+  `/` as Tailwind's postfix-opacity syntax.
+- Markdown docs pages (introduction, how-to-use) 404'd on Windows.
+  `internal/service/docs.go` built the embed.FS path with `filepath.Join`,
+  which uses `\` there, and `embed.FS` only accepts `/`. Switched to `path.Join`.
+- `static/sitemap.xml` and `static/llms.txt` were stale, hand-generated files
+  that nothing rebuilt automatically, so new components silently went
+  missing from both (the build-time shiki highlight cache follows the
+  sitemap, so a missing page's code blocks also stopped highlighting in
+  production). Both are now regenerated as part of the Docker build.
+- Analytics pointed at the original upstream author's own Plausible account.
+  Replaced with the fork's own self-hosted Umami instance.
+- `registry.json`'s utils entry pointed at `utils/templui.go`, renamed to
+  `utils/templ-ui.go` during the fork.
+
+### Changed
+
+- Removed the leftover CLI tab (`templui add <component>`) from every
+  component's Installation section, and the matching "Testing CLI changes
+  against your fork" section from CONTRIBUTING.md. This fork has no CLI.
+- Rewrote the introduction docs page: it still described the CLI as a live
+  workflow, and its "inspired by shadcn/ui" framing had it backwards. The
+  fork exists because upstream moved *to* the shadcn model in v2 (CLI copies
+  source into your repo for you to own). templ-ui forked v1 to stay away
+  from that, not to imitate it.
+- Paused the per-PR Coolify preview deploy workflow. Coolify 4.0.0-beta.459's
+  `/api/v1/deploy` accepts `pull_request_id` + `docker_tag` but never
+  actually creates a per-PR resource, it just re-deploys the main app. Code
+  left in place, gated with `if: false`, pending a Coolify version that
+  actually supports it.
 
 ## [v1.14.0] - 2026-09-07
 
