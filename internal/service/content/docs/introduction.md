@@ -12,7 +12,7 @@ templ-ui is a growing collection of beautifully designed components built with t
 
 ## Why templ-ui
 
-Heavily inspired by [shadcn/ui](https://ui.shadcn.com/), templ-ui brings the same philosophy to Go developers — as an imported Go module instead of copied source.
+Design inspired by [shadcn/ui](https://ui.shadcn.com/) — accessible, unstyled-by-default components you can make your own — but distributed the way any other Go library is: `go get` it, import what you need. No copied source to maintain, no CLI to run.
 
 Every component is designed to be beautiful by default, fully accessible, and CSP compliant. No magic, no hidden complexity – just clean, customizable code that works.
 
