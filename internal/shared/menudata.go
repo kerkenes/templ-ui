@@ -51,6 +51,10 @@ var Sections = []Section{
 				Href: "/docs/how-to-use",
 			},
 			{
+				Text: "Showcase",
+				Href: "/docs/showcase",
+			},
+			{
 				Text: "llms.txt",
 				Href: "/llms.txt",
 			},

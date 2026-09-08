@@ -138,6 +138,7 @@ func main() {
 
 	mux.Handle("GET /docs/introduction", markdownDocsHandler("introduction"))
 	mux.Handle("GET /docs/how-to-use", markdownDocsHandler("how-to-use"))
+	mux.Handle("GET /docs/showcase", htmxHandler(pages.ShowcaseOverview()))
 	// Components
 	mux.Handle("GET /docs/components/accordion", htmxHandler(pages.Accordion()))
 	mux.Handle("GET /docs/components/alert", htmxHandler(pages.Alert()))

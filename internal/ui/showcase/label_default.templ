@@ -1,0 +1,19 @@
+package showcase
+
+import (
+	"github.com/kerkenes/templ-ui/components/input"
+	"github.com/kerkenes/templ-ui/components/label"
+)
+
+templ LabelDefault() {
+	<div class="w-full max-w-sm space-y-2">
+		@label.Label(label.Props{For: "showcase-email"}) {
+			Email
+		}
+		@input.Input(input.Props{
+			ID:          "showcase-email",
+			Type:        input.TypeEmail,
+			Placeholder: "you@example.com",
+		})
+	</div>
+}

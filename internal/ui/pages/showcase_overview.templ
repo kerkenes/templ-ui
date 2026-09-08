@@ -1,0 +1,119 @@
+package pages
+
+import (
+	"github.com/kerkenes/templ-ui/components/card"
+	"github.com/kerkenes/templ-ui/internal/ui/layouts"
+	"github.com/kerkenes/templ-ui/internal/ui/modules"
+	"github.com/kerkenes/templ-ui/internal/ui/showcase"
+)
+
+type showcaseItem struct {
+	Name    string
+	Href    string
+	Preview templ.Component
+	// IframeSrc is set for the rare component whose showcase assumes it
+	// owns the whole page (position: fixed sidebar chrome) and breaks out
+	// of any container it's embedded in directly. Same fix templ-ui's own
+	// sidebar docs page uses: render it in an isolated iframe instead.
+	IframeSrc string
+}
+
+// One entry per registry component, alphabetical by display name. Each
+// Preview reuses the exact showcase function that component's own docs
+// page shows as its first example, nothing custom-built for this grid.
+var showcaseItems = []showcaseItem{
+	{Name: "Accordion", Href: "/docs/components/accordion", Preview: showcase.AccordionDefault()},
+	{Name: "Alert", Href: "/docs/components/alert", Preview: showcase.AlertDefault()},
+	{Name: "Aspect Ratio", Href: "/docs/components/aspect-ratio", Preview: showcase.AspectRatioDefault()},
+	{Name: "Avatar", Href: "/docs/components/avatar", Preview: showcase.AvatarDefault()},
+	{Name: "Badge", Href: "/docs/components/badge", Preview: showcase.BadgeDefault()},
+	{Name: "Breadcrumb", Href: "/docs/components/breadcrumb", Preview: showcase.BreadcrumbDefault()},
+	{Name: "Button", Href: "/docs/components/button", Preview: showcase.ButtonDefault()},
+	{Name: "Calendar", Href: "/docs/components/calendar", Preview: showcase.CalendarDefault()},
+	{Name: "Card", Href: "/docs/components/card", Preview: showcase.CardDefault()},
+	{Name: "Carousel", Href: "/docs/components/carousel", Preview: showcase.CarouselDefault()},
+	{Name: "Charts", Href: "/docs/components/charts", Preview: showcase.ChartDefault()},
+	{Name: "Checkbox", Href: "/docs/components/checkbox", Preview: showcase.CheckboxDefault()},
+	{Name: "Collapsible", Href: "/docs/components/collapsible", Preview: showcase.CollapsibleDefault()},
+	{Name: "Copy Button", Href: "/docs/components/copy-button", Preview: showcase.CopyButtonDefault()},
+	{Name: "Date Picker", Href: "/docs/components/date-picker", Preview: showcase.DatePickerDefault()},
+	{Name: "Dialog", Href: "/docs/components/dialog", Preview: showcase.DialogDefault()},
+	{Name: "Dropdown", Href: "/docs/components/dropdown", Preview: showcase.DropdownDefault()},
+	{Name: "Form", Href: "/docs/components/form", Preview: showcase.InputForm()},
+	{Name: "Hover Card", Href: "/docs/components/hover-card", Preview: showcase.HoverCardDefault()},
+	{Name: "Icon", Href: "/docs/components/icon", Preview: showcase.IconDefault()},
+	{Name: "Input", Href: "/docs/components/input", Preview: showcase.InputDefault()},
+	{Name: "Input OTP", Href: "/docs/components/input-otp", Preview: showcase.InputOTPDefault()},
+	{Name: "Label", Href: "/docs/components/label", Preview: showcase.LabelDefault()},
+	{Name: "Pagination", Href: "/docs/components/pagination", Preview: showcase.PaginationDefault()},
+	{Name: "Popover", Href: "/docs/components/popover", Preview: showcase.PopoverDefault()},
+	{Name: "Progress", Href: "/docs/components/progress", Preview: showcase.ProgressDefault()},
+	{Name: "Radio", Href: "/docs/components/radio", Preview: showcase.RadioDefault()},
+	{Name: "Rating", Href: "/docs/components/rating", Preview: showcase.RatingDefault()},
+	{Name: "Segmented Process", Href: "/docs/components/segmented-process", Preview: showcase.SegmentedProcessDefault()},
+	{Name: "Select Box", Href: "/docs/components/select-box", Preview: showcase.SelectBoxDefault()},
+	{Name: "Separator", Href: "/docs/components/separator", Preview: showcase.SeparatorDefault()},
+	{Name: "Sheet", Href: "/docs/components/sheet", Preview: showcase.SheetDefault()},
+	{Name: "Sidebar", Href: "/docs/components/sidebar", IframeSrc: "/docs/components/sidebar-preview"},
+	{Name: "Skeleton", Href: "/docs/components/skeleton", Preview: showcase.SkeletonDefault()},
+	{Name: "Slider", Href: "/docs/components/slider", Preview: showcase.SliderDefault()},
+	{Name: "Switch", Href: "/docs/components/switch", Preview: showcase.SwitchDefault()},
+	{Name: "Table", Href: "/docs/components/table", Preview: showcase.Table()},
+	{Name: "Tabs", Href: "/docs/components/tabs", Preview: showcase.TabsDefault()},
+	{Name: "Tags Input", Href: "/docs/components/tags-input", Preview: showcase.TagsInputDefault()},
+	{Name: "Textarea", Href: "/docs/components/textarea", Preview: showcase.TextareaDefault()},
+	{Name: "Time Picker", Href: "/docs/components/time-picker", Preview: showcase.TimePickerDefault()},
+	{Name: "Toast", Href: "/docs/components/toast", Preview: showcase.ToastDefault()},
+	{Name: "Tooltip", Href: "/docs/components/tooltip", Preview: showcase.TooltipDefault()},
+}
+
+templ ShowcaseOverview() {
+	@layouts.DocsLayout(
+		"Showcase",
+		"Every component's default preview, on one page.",
+		[]modules.TableOfContentsItem{},
+	) {
+		@modules.PageWrapper(modules.PageWrapperProps{
+			Name:        "Showcase",
+			Description: templ.Raw("Every component's default preview, on one page. Some heavier components (Sidebar, Calendar, Table) are clipped to fit the grid, open the component's own page for the full picture."),
+			HideSource:  true,
+			Breadcrumbs: modules.Breadcrumbs{
+				Items: []modules.BreadcrumbItem{
+					{
+						Text: "Docs",
+						Path: "/docs",
+					},
+					{
+						Text: "Showcase",
+					},
+				},
+			},
+		}) {
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+				for _, item := range showcaseItems {
+					@card.Card() {
+						@card.Header() {
+							@card.Title() {
+								{ item.Name }
+							}
+						}
+						@card.Content(card.ContentProps{
+							Class: "flex h-48 items-center justify-center overflow-hidden rounded-md border p-6",
+						}) {
+							if item.IframeSrc != "" {
+								<iframe src={ item.IframeSrc } class="h-full w-full border-0" title={ item.Name + " preview" } loading="lazy"></iframe>
+							} else {
+								@item.Preview
+							}
+						}
+						@card.Footer() {
+							<a href={ templ.SafeURL(item.Href) } class="text-sm text-muted-foreground hover:text-foreground hover:underline">
+								View docs
+							</a>
+						}
+					}
+				}
+			</div>
+		}
+	}
+}
