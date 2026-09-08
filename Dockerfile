@@ -17,6 +17,12 @@ RUN templ generate
 # and fall back to plain unhighlighted text in production.
 RUN go run ./cmd/sitemap --baseurl="https://templ-ui.muratkirazkaya.com" --routes="./cmd/docs/main.go" --output="./static/sitemap.xml"
 
+# Same class of staleness as the sitemap: static/llms.txt is generated
+# from registry.json by hand (task generate-llms) and nothing rebuilt
+# it automatically, so it silently fell behind every time a component
+# got added to the registry without someone remembering to run it.
+RUN go run ./cmd/generate-llms/main.go
+
 # Install build dependencies
 RUN apt-get update && apt-get install -y curl wget && rm -rf /var/lib/apt/lists/*
 
