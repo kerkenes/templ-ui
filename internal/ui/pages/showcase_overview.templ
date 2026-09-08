@@ -115,7 +115,7 @@ templ ShowcaseOverview() {
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 				for _, item := range showcaseItems {
 					@card.Card(card.Props{Class: item.spanClass()}) {
-						@card.Header() {
+						@card.Header(card.HeaderProps{Class: "pb-6"}) {
 							@card.Title() {
 								{ item.Name }
 							}
@@ -129,7 +129,7 @@ templ ShowcaseOverview() {
 								@item.Preview
 							}
 						}
-						@card.Footer() {
+						@card.Footer(card.FooterProps{Class: "pt-6"}) {
 							<a href={ templ.SafeURL(item.Href) } class="text-sm text-muted-foreground hover:text-foreground hover:underline">
 								View docs
 							</a>
