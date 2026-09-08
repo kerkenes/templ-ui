@@ -15,9 +15,10 @@ type showcaseItem struct {
 	// breakpoint, sized to what the preview actually needs (a badge and a
 	// full settings tabs panel don't deserve the same box).
 	Span int
-	// Tall gives content that's naturally taller (a calendar month, a data
-	// table) more room instead of clipping it as hard as a 1-span card.
-	Tall bool
+	// Height overrides the box height for content that's naturally taller
+	// (a calendar month, a carousel with captions) or would otherwise sit
+	// in a lot of empty space. Empty means the h-48 default.
+	Height string
 	// Note replaces Preview for the one component that can't be embedded
 	// at all: see the Sidebar entry below.
 	Note string
@@ -35,8 +36,8 @@ func (i showcaseItem) spanClass() string {
 }
 
 func (i showcaseItem) heightClass() string {
-	if i.Tall {
-		return "h-72"
+	if i.Height != "" {
+		return i.Height
 	}
 	return "h-48"
 }
@@ -52,17 +53,17 @@ var showcaseItems = []showcaseItem{
 	{Name: "Badge", Href: "/docs/components/badge", Span: 1, Preview: showcase.BadgeDefault()},
 	{Name: "Breadcrumb", Href: "/docs/components/breadcrumb", Span: 1, Preview: showcase.BreadcrumbDefault()},
 	{Name: "Button", Href: "/docs/components/button", Span: 1, Preview: showcase.ButtonDefault()},
-	{Name: "Calendar", Href: "/docs/components/calendar", Span: 2, Tall: true, Preview: showcase.CalendarDefault()},
-	{Name: "Card", Href: "/docs/components/card", Span: 1, Tall: true, Preview: showcase.CardDefault()},
-	{Name: "Carousel", Href: "/docs/components/carousel", Span: 3, Tall: true, Preview: showcase.CarouselDefault()},
-	{Name: "Charts", Href: "/docs/components/charts", Span: 2, Tall: true, Preview: showcase.ChartDefault()},
-	{Name: "Checkbox", Href: "/docs/components/checkbox", Span: 2, Tall: true, Preview: showcase.CheckboxDefault()},
-	{Name: "Collapsible", Href: "/docs/components/collapsible", Span: 3, Tall: true, Preview: showcase.CollapsibleDefault()},
+	{Name: "Calendar", Href: "/docs/components/calendar", Span: 2, Height: "h-96", Preview: showcase.CalendarDefault()},
+	{Name: "Card", Href: "/docs/components/card", Span: 2, Height: "h-72", Preview: showcase.CardDefault()},
+	{Name: "Carousel", Href: "/docs/components/carousel", Span: 3, Height: "h-[32rem]", Preview: showcase.CarouselDefault()},
+	{Name: "Charts", Href: "/docs/components/charts", Span: 1, Height: "h-72", Preview: showcase.ChartDefault()},
+	{Name: "Checkbox", Href: "/docs/components/checkbox", Span: 1, Height: "h-72", Preview: showcase.CheckboxDefault()},
+	{Name: "Collapsible", Href: "/docs/components/collapsible", Span: 3, Height: "h-72", Preview: showcase.CollapsibleDefault()},
 	{Name: "Copy Button", Href: "/docs/components/copy-button", Span: 1, Preview: showcase.CopyButtonDefault()},
 	{Name: "Date Picker", Href: "/docs/components/date-picker", Span: 1, Preview: showcase.DatePickerDefault()},
 	{Name: "Dialog", Href: "/docs/components/dialog", Span: 1, Preview: showcase.DialogDefault()},
 	{Name: "Dropdown", Href: "/docs/components/dropdown", Span: 1, Preview: showcase.DropdownDefault()},
-	{Name: "Form", Href: "/docs/components/form", Span: 2, Tall: true, Preview: showcase.InputForm()},
+	{Name: "Form", Href: "/docs/components/form", Span: 2, Preview: showcase.InputForm()},
 	{Name: "Hover Card", Href: "/docs/components/hover-card", Span: 1, Preview: showcase.HoverCardDefault()},
 	{Name: "Icon", Href: "/docs/components/icon", Span: 1, Preview: showcase.IconDefault()},
 	{Name: "Input", Href: "/docs/components/input", Span: 1, Preview: showcase.InputDefault()},
@@ -71,7 +72,7 @@ var showcaseItems = []showcaseItem{
 	{Name: "Pagination", Href: "/docs/components/pagination", Span: 2, Preview: showcase.PaginationDefault()},
 	{Name: "Popover", Href: "/docs/components/popover", Span: 1, Preview: showcase.PopoverDefault()},
 	{Name: "Progress", Href: "/docs/components/progress", Span: 1, Preview: showcase.ProgressDefault()},
-	{Name: "Radio", Href: "/docs/components/radio", Span: 3, Preview: showcase.RadioDefault()},
+	{Name: "Radio", Href: "/docs/components/radio", Span: 3, Height: "h-72", Preview: showcase.RadioDefault()},
 	{Name: "Rating", Href: "/docs/components/rating", Span: 1, Preview: showcase.RatingDefault()},
 	{Name: "Segmented Process", Href: "/docs/components/segmented-process", Span: 1, Preview: showcase.SegmentedProcessDefault()},
 	{Name: "Select Box", Href: "/docs/components/select-box", Span: 1, Preview: showcase.SelectBoxDefault()},
@@ -80,9 +81,9 @@ var showcaseItems = []showcaseItem{
 	{Name: "Sidebar", Href: "/docs/components/sidebar", Span: 1, Note: "Sidebar owns the whole page layout, too big for a grid preview."},
 	{Name: "Skeleton", Href: "/docs/components/skeleton", Span: 1, Preview: showcase.SkeletonDefault()},
 	{Name: "Slider", Href: "/docs/components/slider", Span: 1, Preview: showcase.SliderDefault()},
-	{Name: "Switch", Href: "/docs/components/switch", Span: 2, Tall: true, Preview: showcase.SwitchDefault()},
-	{Name: "Table", Href: "/docs/components/table", Span: 3, Tall: true, Preview: showcase.Table()},
-	{Name: "Tabs", Href: "/docs/components/tabs", Span: 3, Tall: true, Preview: showcase.TabsDefault()},
+	{Name: "Switch", Href: "/docs/components/switch", Span: 1, Height: "h-72", Preview: showcase.SwitchDefault()},
+	{Name: "Table", Href: "/docs/components/table", Span: 3, Height: "h-72", Preview: showcase.Table()},
+	{Name: "Tabs", Href: "/docs/components/tabs", Span: 3, Height: "h-96", Preview: showcase.TabsDefault()},
 	{Name: "Tags Input", Href: "/docs/components/tags-input", Span: 2, Preview: showcase.TagsInputDefault()},
 	{Name: "Textarea", Href: "/docs/components/textarea", Span: 1, Preview: showcase.TextareaDefault()},
 	{Name: "Time Picker", Href: "/docs/components/time-picker", Span: 1, Preview: showcase.TimePickerDefault()},
