@@ -3,7 +3,7 @@ package service
 import (
 	"embed"
 	"fmt"
-	"path/filepath"
+	"path"
 
 	"github.com/kerkenes/templ-ui/internal/markdown"
 	"github.com/kerkenes/templ-ui/internal/ui/modules"
@@ -33,8 +33,10 @@ func NewDocsService() *DocsService {
 
 // GetPage loads and parses a markdown document by slug
 func (s *DocsService) GetPage(slug string) (*DocPage, error) {
-	// Construct file path
-	mdPath := filepath.Join("content/docs", slug+".md")
+	// embed.FS (io/fs) always wants forward slashes -- filepath.Join would
+	// use \ on Windows and every lookup would fail with "file does not
+	// exist", so path.Join it is.
+	mdPath := path.Join("content/docs", slug+".md")
 
 	// Read markdown file from embedded FS
 	content, err := contentFS.ReadFile(mdPath)
