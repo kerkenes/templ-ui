@@ -1,3 +1,4 @@
 # AGENTS.md
 
 - After making changes, **never run `templ generate` / `go tool templ generate` and never manually rebuild `*.min.js` component assets**, since both JS minification and generated `_templ.go` files are handled automatically by the normal development workflow (`task dev` / watchers).
+- **New route in `cmd/docs/main.go` → no local sitemap action needed, but know why.** The Dockerfile regenerates `static/sitemap.xml` from that route table on every build. If it didn't, a new page's code blocks would silently never get crawled by the build-time `highlight-gen` step and would render as plain unhighlighted text in production only — `task dev` always hits the live shiki service and can't reproduce that failure mode locally, so don't trust local rendering as proof a new page highlights correctly in prod.

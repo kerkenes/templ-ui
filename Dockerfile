@@ -11,6 +11,12 @@ RUN go install github.com/a-h/templ/cmd/templ@v0.3.1001
 # Generate templ files
 RUN templ generate
 
+# Regenerate the sitemap from the current route table -- the highlight
+# crawl below only visits sitemap URLs, so a stale sitemap means a new
+# page's code blocks silently never get baked into the highlight cache
+# and fall back to plain unhighlighted text in production.
+RUN go run ./cmd/sitemap --baseurl="https://templ-ui.muratkirazkaya.com" --routes="./cmd/docs/main.go" --output="./static/sitemap.xml"
+
 # Install build dependencies
 RUN apt-get update && apt-get install -y curl wget && rm -rf /var/lib/apt/lists/*
 
