@@ -460,7 +460,7 @@
   ],
   "utils": [
     {
-      "path": "utils/templui.go",
+      "path": "utils/templ-ui.go",
       "description": "Core utility functions, asset URLs, and component script helpers"
     }
   ]
