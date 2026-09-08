@@ -55,6 +55,7 @@ Components are designed to be composable, customizable, and easy to integrate in
 - [Alert](https://templ-ui.muratkirazkaya.com/docs/components/alert): Alert component for messages and notifications.
 - [Badge](https://templ-ui.muratkirazkaya.com/docs/components/badge): Badge component for labels and status indicators.
 - [Progress](https://templ-ui.muratkirazkaya.com/docs/components/progress): Progress bar component.
+- [Segmented Process](https://templ-ui.muratkirazkaya.com/docs/components/segmented-process): Unstable: API may change. Multi-segment progress bar with per-segment tooltips and threshold markers.
 - [Skeleton](https://templ-ui.muratkirazkaya.com/docs/components/skeleton): Skeleton loading placeholder.
 - [Toast](https://templ-ui.muratkirazkaya.com/docs/components/toast): Toast notification component.
 
